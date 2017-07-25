@@ -2,7 +2,9 @@
 
     "use strict";
 
-    function QuestionController($state){
+    QuestionController.$inject = ["$state", "QuestionCardApi"];
+
+    function QuestionController($state, QuestionCardApi){
         var vc = this;
         var samplePromise = QuestionCardApi.getAllQuestions();
 

@@ -7,8 +7,7 @@
     function QuestionCardModel(){
         var model = {
             isAnswered: null,
-            text: null,
-            
+            text: null
         };
         return model;
     }

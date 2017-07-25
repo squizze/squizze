@@ -4,7 +4,9 @@
 
     angular.module("disc.components.question-card").factory("QuestionCardApi", QuestionCardApi);
 
-    function QuestionCardApi(){
+    QuestionCardApi.$inject = ["Ajax"];
+
+    function QuestionCardApi(Ajax){
         var restApi = {
             getAllQuestions: getAllQuestions
         };
