@@ -12,7 +12,7 @@
         };
 
         function getAllQuestions(){
-            return Ajax.get("https://api.myjson.com/bins/1amnaf");
+            return Ajax.get("https://api.myjson.com/bins/qv2rz");
         }
 
         return restApi;
