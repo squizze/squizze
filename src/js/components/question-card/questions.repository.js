@@ -10,7 +10,7 @@
 
         var model = {
             init: init,
-            getByid: getById
+            getById: getById
         };
 
         var _cachedQuestionsFactory = $cacheFactory("questionsCacheFactory");
