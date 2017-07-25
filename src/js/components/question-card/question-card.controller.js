@@ -25,7 +25,14 @@
                 _answer.option = _option[_answer.sign];
 
                 AnswersModel.addAnswer(_answer, value);
-                $state.go("question", {"questionId": _currentQuestionId++});
+                var _nextQuestionId = _currentQuestionId + 1;
+
+                if(_nextQuestionId <= QuestionsRepository.getLastQuestionId()){
+                    $state.go("question", {"questionId": _nextQuestionId});
+                }else {
+                    console.log(AnswersModel.getAllAnswers());
+                }
+
             }
         });
 

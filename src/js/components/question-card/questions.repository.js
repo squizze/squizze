@@ -10,12 +10,14 @@
 
         var model = {
             init: init,
-            getById: getById
+            getById: getById,
+            getLastQuestionId: getLastQuestionId
         };
 
         var _cachedQuestionsFactory = $cacheFactory("questionsCacheFactory");
         var _cachedQuestions;
         var _questionsById = {};
+        var _lastQuestionId;
         var questions;
 
         function init(){
@@ -34,6 +36,8 @@
                         _questionsById[question.id] = question;
                     });
 
+                    _lastQuestionId = questions[questions.length - 1].id;
+
 
                     deferred.resolve(questions);
                 });
@@ -44,6 +48,10 @@
 
         function getById(id){
             return _questionsById[id];
+        }
+
+        function getLastQuestionId(){
+            return _lastQuestionId;
         }
 
         return model;
