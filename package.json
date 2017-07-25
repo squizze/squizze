@@ -1,0 +1,26 @@
+{
+  "name": "teste-disc",
+  "version": "1.0.0",
+  "description": "Teste de perfil comportamental DISC.",
+  "main": "js/disc.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teles/teste-disc.git"
+  },
+  "keywords": [
+    "test",
+    "disc",
+    "portugues",
+    "brasil",
+    "testes"
+  ],
+  "author": "Teles <josetelesmaciel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teles/teste-disc/issues"
+  },
+  "homepage": "https://github.com/teles/teste-disc#readme"
+}
