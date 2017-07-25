@@ -30,7 +30,7 @@
                 if(_nextQuestionId <= QuestionsRepository.getLastQuestionId()){
                     $state.go("question", {"questionId": _nextQuestionId});
                 }else {
-                    console.log(AnswersModel.getAllAnswers());
+                    console.log(AnswersModel.calculates());
                 }
 
             }
