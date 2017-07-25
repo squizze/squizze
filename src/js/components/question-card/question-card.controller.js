@@ -2,16 +2,16 @@
 
     "use strict";
 
-    QuestionController.$inject = ["$state", "QuestionCardApi"];
+    QuestionController.$inject = ["$state", "QuestionsRepository", "QuestionCardModel"];
 
-    function QuestionController($state, QuestionCardApi){
+    function QuestionController($state, QuestionsRepository, QuestionCardModel){
         var vc = this;
-        var samplePromise = QuestionCardApi.getAllQuestions();
 
-        samplePromise.then(function(results){
-            vc.question = results.data.questions.filter(function(question){
-                return question.id === $state.params.questionId;
-            })[0];
+        QuestionsRepository.init().then(function(){
+            var _currentQuestion = QuestionsRepository.getByid($state.params.questionId);
+            var _option = _currentQuestion.minus !== undefined ? {"minus": _currentQuestion.minus } : {"plus": _currentQuestion.plus};
+            QuestionCardModel.init(_currentQuestion.text, _option);
+            vc.vm = QuestionCardModel;
         });
     }
 

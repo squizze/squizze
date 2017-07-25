@@ -6,9 +6,17 @@
 
     function QuestionCardModel(){
         var model = {
+            init: init,
             isAnswered: null,
-            text: null
+            text: null,
+            option: null
         };
+
+        function init(text, option){
+            model.text = text;
+            model.option = option;
+        }
+
         return model;
     }
 
