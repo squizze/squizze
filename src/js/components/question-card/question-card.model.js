@@ -9,10 +9,12 @@
             init: init,
             isAnswered: null,
             text: null,
-            option: null
+            option: null,
+            id: null
         };
 
-        function init(text, option){
+        function init(id, text, option){
+            model.id = window.parseInt(id);
             model.text = text;
             model.option = option;
         }

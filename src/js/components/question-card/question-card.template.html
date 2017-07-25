@@ -2,7 +2,7 @@
     <h1 data-ng-bind="vc.vm.text"></h1>
     <ul>
         <li data-ng-repeat="number in [0,1,2,3,4,5]">
-            <button data-ng-bind="number"></button>
+            <button data-ng-bind="number" data-ng-click="vc.registerAnswer(number)"></button>
         </li>
     </ul>
 </div>
