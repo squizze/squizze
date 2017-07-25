@@ -2,6 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.question-card", ["ui.router"]);
+    angular.module("disc.components.question-card", ["ui.router", "ajax"]);
 
 })();
