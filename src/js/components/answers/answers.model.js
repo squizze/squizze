@@ -43,8 +43,12 @@
             return _results;
         }
 
-        function calculates(){
+        function _resetResults(){
+            _results = [];
+        }
 
+        function calculates(){
+            _resetResults();
             var _temp = {};
 
             for(var option in model.options){
