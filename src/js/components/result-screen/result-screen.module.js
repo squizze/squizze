@@ -2,6 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.result-screen", []);
+    angular.module("disc.components.result-screen", ["ui.router"]);
 
 })();

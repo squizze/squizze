@@ -9,12 +9,15 @@
         <script src="js/components/question-card/question-card.module.js"></script>
         <script src="js/components/answers/answers.module.js"></script>
         <script src="js/components/result-screen/result-screen.module.js"></script>
+        <script src="js/components/home/home.module.js"></script>
 
         <!-- outros -->
 
         <script src="js/components/ajax/ajax.model.js"></script>
         <script src="js/components/answers/answers.model.js"></script>
         <script src="js/components/answers/answers.constant.js"></script>
+        <script src="js/components/home/home.state.js"></script>
+        <script src="js/components/home/home.controller.js"></script>
         <script src="js/components/result-screen/result-screen.state.js"></script>
         <script src="js/components/result-screen/result-screen.controller.js"></script>
         <script src="js/components/question-card/question-card-api.model.js"></script>
@@ -25,7 +28,13 @@
         <script src="js/components/question-card/question-card.controller.js"></script>
 
         <script type="text/javascript">
-            angular.module("disc", ["disc.components.question-card", "ui.router"]);
+            angular.module("disc", ["disc.components.question-card", "disc.components.home"]);
+            angular.module("disc").config(config);
+
+            function config($urlRouterProvider){
+                $urlRouterProvider.when("", "/");
+            }
+
         </script>
 
         <title>Teste DISC</title>
