@@ -75,6 +75,10 @@
 
             }
 
+            _results.sort(function(a,b){
+                return a.option > b.option;
+            });
+
         }
 
         return model;
