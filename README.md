@@ -1,5 +1,7 @@
 # DISC
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d058b27bd11e4c039341d4b60c89c931)](https://www.codacy.com/app/josetelesmaciel/teste-disc?utm_source=github.com&utm_medium=referral&utm_content=teles/teste-disc&utm_campaign=badger)
+
 ## Descubra seu perfil comportamental DISC.
 
 O DISC é um teste comportamental que classifica o indivíduo testado de acordo com uma de 4 categorias. 
