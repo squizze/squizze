@@ -1,9 +1,9 @@
 <div>
-    <div data-ng-if="vc.vm.isLoading">
+    <div data-ng-if="vc.isLoading">
         <p>Carregando questões.</p>
     </div>
 
-    <div data-ng-if="!vc.vm.isLoading">
+    <div data-ng-if="!vc.isLoading">
         <h1 data-ng-bind="vc.vm.question.text"></h1>
 
         <ul>

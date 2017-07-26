@@ -10,7 +10,6 @@
         var model = {
             init: init,
             registerAnswer: registerAnswer,
-            isLoading: false,
             question: null
         };
         var _questionId;
@@ -19,11 +18,9 @@
         function init(questionId){
             var deferred = $q.defer();
             _questionId = questionId;
-            model.isLoading = true;
 
             QuestionsRepository.init().then(function(){
                 model.question = QuestionsRepository.getById(_questionId);
-                model.isLoading = false;
                 deferred.resolve();
             });
 
