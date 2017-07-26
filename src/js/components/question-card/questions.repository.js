@@ -4,9 +4,9 @@
 
     angular.module("disc.components.question-card").factory("QuestionsRepository", QuestionsRepository);
 
-    QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory"];
+    QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory", "QuestionCardAdapter"];
 
-    function QuestionsRepository(QuestionCardApi, $q, $cacheFactory){
+    function QuestionsRepository(QuestionCardApi, $q, $cacheFactory, QuestionCardAdapter){
 
         var model = {
             init: init,
@@ -29,7 +29,8 @@
                 var promiseToGetQuestions = QuestionCardApi.getAllQuestions();
 
                 promiseToGetQuestions.then(function(result){
-                    questions = result.data.questions;
+                    questions = result.data.questions.map(QuestionCardAdapter.getObjectFromData);
+                    _cachedQuestionsFactory.put("questionsCacheFactory", questions);
                     _cachedQuestions = _cachedQuestionsFactory.get("questionsCacheFactory");
 
                     questions.forEach(function(question){

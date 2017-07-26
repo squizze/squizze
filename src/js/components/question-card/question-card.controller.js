@@ -2,40 +2,15 @@
 
     "use strict";
 
-    QuestionController.$inject = ["$state", "QuestionsRepository", "QuestionCardModel", "AnswersModel"];
+    QuestionController.$inject = ["QuestionStateModel", "$state"];
 
-    function QuestionController($state, QuestionsRepository, QuestionCardModel, AnswersModel){
+    function QuestionController(QuestionStateModel, $state){
         var vc = this;
+        var _questionId = window.parseInt($state.params.questionId);
 
-        QuestionsRepository.init().then(function(){
-            var _currentQuestionId = window.parseInt($state.params.questionId);
-            var _currentQuestion = QuestionsRepository.getById(_currentQuestionId);
-            var _option = _currentQuestion.minus !== undefined ? {"minus": _currentQuestion.minus } : {"plus": _currentQuestion.plus};
-            QuestionCardModel.init(_currentQuestionId, _currentQuestion.text, _option);
-            vc.vm = QuestionCardModel;
-
-            vc.registerAnswer = function(value){
-
-                var _answer = {
-                    id: vc.vm.id,
-                    text: vc.vm.text,
-                    sign: vc.vm.option.minus !== undefined ? "minus" : "plus",
-                    value: value
-                };
-                _answer.option = _option[_answer.sign];
-
-                AnswersModel.addAnswer(_answer, value);
-                var _nextQuestionId = _currentQuestionId + 1;
-
-                if(_nextQuestionId <= QuestionsRepository.getLastQuestionId()){
-                    $state.go("question", {"questionId": _nextQuestionId});
-                }else {
-                    console.log(AnswersModel.calculates());
-                }
-
-            }
+        QuestionStateModel.init(_questionId).then(function(){
+            vc.vm = QuestionStateModel;
         });
-
     }
 
     angular.module("disc.components.question-card").controller("QuestionController", QuestionController);

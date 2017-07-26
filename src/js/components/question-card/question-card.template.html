@@ -1,8 +1,16 @@
 <div>
-    <h1 data-ng-bind="vc.vm.text"></h1>
-    <ul>
-        <li data-ng-repeat="number in [0,1,2,3,4,5]">
-            <button data-ng-bind="number" data-ng-click="vc.registerAnswer(number)"></button>
-        </li>
-    </ul>
+    <div data-ng-if="vc.vm.isLoading">
+        <p>Carregando questões.</p>
+    </div>
+
+    <div data-ng-if="!vc.vm.isLoading">
+        <h1 data-ng-bind="vc.vm.question.text"></h1>
+
+        <ul>
+            <li data-ng-repeat="value in [0,1,2,3,4,5]">
+                <button data-ng-bind="value" data-ng-click="vc.vm.registerAnswer(vc.vm.question, value)"></button>
+            </li>
+        </ul>
+    </div>
+
 </div>

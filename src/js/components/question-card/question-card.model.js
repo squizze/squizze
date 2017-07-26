@@ -2,24 +2,28 @@
 
     "use strict";
 
-    angular.module("disc.components.question-card").factory("QuestionCardModel", QuestionCardModel);
+    angular.module("disc.components.question-card").factory("QuestionCardAdapter", QuestionCardAdapter);
 
-    function QuestionCardModel(){
-        var model = {
-            init: init,
-            isAnswered: null,
-            text: null,
-            option: null,
-            id: null
+    function QuestionCardAdapter(){
+        var adapter = {
+            getObjectFromData: getObjectFromData
         };
 
-        function init(id, text, option){
-            model.id = window.parseInt(id);
-            model.text = text;
-            model.option = option;
+        return adapter;
+
+        function getObjectFromData(data){
+
+            var objectFromData = {
+                text: data.text,
+                id: window.parseInt(data.id),
+                sign: data.plus !== undefined ? "plus" : "minus"
+            };
+
+            objectFromData.option = data[objectFromData.sign];
+
+            return objectFromData;
         }
 
-        return model;
     }
 
 
