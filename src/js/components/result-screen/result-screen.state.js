@@ -9,9 +9,9 @@
     function config($stateProvider){
 
         var resultScreenState = {
-            template: "<div>acabou</div>",
+            templateUrl: "/src/js/components/result-screen/result-screen.template.html",
             controllerAs: "vc",
-            controller: function(){},
+            controller: "ResultScreenController",
             bindToController: true,
             url: "/result"
         };

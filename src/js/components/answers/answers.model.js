@@ -4,15 +4,18 @@
 
     angular.module("disc.components.answers").factory("AnswersModel", AnswersModel);
 
-    function AnswersModel(){
+    AnswersModel.$inject = ["ANSWERS_CONSTANT"];
+
+    function AnswersModel(ANSWERS_CONSTANT){
         var model = {
             getAnswerById: getAnswerById,
             addAnswer: addAnswer,
+            getResults: getResults,
             calculates: calculates,
             options : {}
         };
 
-        var _results = {};
+        var _results = [];
 
         function addAnswer(answer, value){
 
@@ -36,6 +39,10 @@
             return model.options[answerId];
         }
 
+        function getResults(){
+            return _results;
+        }
+
         function calculates(){
 
             var _temp = {};
@@ -48,13 +55,22 @@
                 }
             }
 
-            for(var result in _temp){
-                _results[result] = _temp[result].reduce(function(a,b){
-                    return a + b;
-                })
+            for(var option in _temp){
+                var result = {
+                    result:_temp[option].reduce(function(a,b){
+                        return a + b;
+                    }),
+                    option: option
+                };
+
+                if(ANSWERS_CONSTANT[result.option] !== undefined){
+                    angular.extend(result, ANSWERS_CONSTANT[result.option]);
+                }
+
+                _results.push(result);
+
             }
 
-            console.log(_results);
         }
 
         return model;
