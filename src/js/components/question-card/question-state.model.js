@@ -45,6 +45,7 @@
 
         function _endQuestions(){
             AnswersModel.calculates();
+            $state.go("resultScreen");
         }
 
         return model;
