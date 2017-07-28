@@ -25,5 +25,28 @@ python -m SimpleHTTPServer 1234
 
 Então acesse a página principal em [http://localhost:1234/src](http://localhost:1234/src).
 
+## Sobre as motivações para criar esse repositório
+
+Criei essa repositório após fazer o teste do DISC na empresa onde trabalho. Na ocasião fiz o teste respondendo no papel e contabilizando o resultado manualmente olhando uma tabela. Logo pensei em transformar isso em um single page application.
+
+Durante esse processo acabei percebendo que um projeto pequeno como esse serve de alvo para prática de diversas matérias relacionadas a desenvolvimento front-end. Sendo assim, listo aqui quais são os projetos que pretendo fazer nesse repositório.
+
+| Projeto  | Prioridade |
+| ------------- | ------------- |
+| Adicionar **testes unitários** ao repositório  | muito alto  |
+| Ter **nota A** no codacy | muito alto |
+| Fazer um refactoring da api que torne o **modelo de dados ignorante** em relação a regras de negócios  | alto  |
+| Utilizar **webpack** no repositório | alto|
+| Criar uma **progressive web app** a partir desse projeto | alto| 
+| Aplicar **i18n** ao projeto | médio |
+| Aplicar design inspirado no **material design**  | médio  |
+| Utilizar **recursos do ES6** | médio |
+| Adicionar **arquivos de map** ao cdigo final | médio| 
+| Transformar o código em um **pacote genérico** distribuído via npm | médio |
+| Utilizar **npm scripts** como gerenciador de tarefas  | baixo  |
+| Substituir diretivas por **component** | baixo |
+
+Ou seja, com um código simples é possível exercitar boas práticas de desenvolvimento :tada:
+
 
 
