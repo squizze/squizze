@@ -55,12 +55,12 @@
                 }
             }
 
-            for(var option in _temp){
+            for(var _tempItem in _temp){
                 var result = {
-                    result:_temp[option].reduce(function(a,b){
+                    result:_temp[_tempItem].reduce(function(a,b){
                         return a + b;
                     }),
-                    option: option
+                    option: _tempItem
                 };
 
                 if(ANSWERS_CONSTANT[result.option] !== undefined){
