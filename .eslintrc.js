@@ -10,6 +10,9 @@ module.exports = {
             "error",
             "never"
         ],
+        "globals": {
+            "angular": false
+        },
         "array-callback-return": "error",
         "array-element-newline": "off",
         "arrow-body-style": "error",
