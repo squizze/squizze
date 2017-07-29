@@ -1,163 +1,163 @@
 {
+    "options":{
+      "A": {
+        "shortName": "D",
+        "longName": "Dominance",
+        "rule": "A1 - A2"
+      },
+      "B": {
+        "shortName": "I",
+        "longName": "Influence",
+        "rule": "B1 - B2"
+      },
+      "C": {
+        "shortName": "S",
+        "longName": "Steadliness",
+        "rule": "C1 - C2"
+      },
+      "D": {
+        "shortName": "C",
+        "longName": "Compliance",
+        "rule": "D1 - D2"
+      }
+    },
+    "groups": {
+      "A1": [3,8,19, 31],
+      "A2": [20,23,26,32],
+      "B1": [5,6,7,11],
+      "B2": [1,24,27,30],
+      "C1": [2,10,15,18,25],
+      "C2": [9,12,16,29],
+      "D1": [4,17,21],
+      "D2": [13,14,22,28]
+    },
     "questions":[
       {
         "id": "1",
-        "minus": "B",
         "text": "Gosto de trabalhar sozinho."
       },
       {
         "id": "2",
-        "plus": "C",
         "text": "Sou calmo e sereno."
       },
       {
         "id": "3",
-        "plus": "A",
         "text": "Costumo atingir meus objetivos, não importam os obstáculos."
       },
       {
         "id": "4",
-        "plus": "D",
         "text": "Sou meticuloso e detalhista."
       },
       {
         "id": "5",
-        "plus": "B",
         "text": "Sou extrovertido e falante."
       },
       {
         "id": "6",
-        "plus": "B",
         "text": "Sempre participo ativamente nas reuniões de trabalho."
       },
       {
         "id": "7",
-        "plus": "B",
         "text": "Gosto de estar cercado de pessoas e ser o centro das atenções."
       },
       {
         "id": "8",
-        "plus": "A",
         "text": "Tomo sempre a iniciativa e sou muito impaciente."
       },
       {
         "id": "9",
-        "minus": "C",
         "text": "Sou muito curioso. Gosto sempre de saber de tudo."
       },
       {
         "id": "10",
-        "plus": "C",
         "text": "Gosto de fazer um trabalho perfeito, não importa quanto tempo demore."
       },
       {
         "id": "11",
-        "plus": "B",
         "text": "Falo pelos cotovelos, não consigo ficar calado."
       },
       {
         "id": "12",
-        "minus": "C",
         "text": "Sou extremamente ambicioso."
       },
       {
         "id": "13",
-        "minus": "D",
         "text": "Estruturas muito rígidas me aborrecem, gosto da liberdade de ação."
       },
       {
         "id": "14",
-        "minus": "D",
         "text": "Considero-me um individuo teimoso."
       },
       {
         "id": "15",
-        "plus": "C",
         "text": "Cedo a vez ao outro sem problema."
       },
       {
         "id": "16",
-        "minus": "C",
         "text": "Tenho coragem de me arriscar."
       },
       {
         "id": "17",
-        "plus": "D",
         "text": "Sou disciplinado e organizado."
       },
       {
         "id": "18",
-        "plus": "C",
         "text": "Considero-me uma pessoa de índole calma e moderada."
       },
       {
         "id": "19",
-        "plus": "A",
         "text": "Aprecio desafios. Adoro competir."
       },
       {
         "id": "20",
-        "minus": "A",
         "text": "Penso várias vezes antes de tomar uma decisão."
       },
       {
         "id": "21",
-        "plus": "D",
         "text": "Sou uma pessoa cumpridora das regras e da política da empresa."
       },
       {
         "id": "22",
-        "minus": "D",
         "text": "Sou brincalhão. Estou sempre rindo."
       },
       {
         "id": "23",
-        "minus": "A",
         "text": "Sou calmo e paciente."
       },
       {
         "id": "24",
-        "minus": "B",
         "text": "Sou mais reservado."
       },
       {
         "id": "25",
-        "plus": "C",
         "text": "Prefiro ficar em casa com a minha família."
       },
       {
         "id": "26",
-        "minus": "A",
         "text": "Recebo em as normas e procedimentos. Respeito as regras."
       },
       {
         "id": "27",
-        "minus": "B",
         "text": "Sou bastante cuidadoso. Não me arrisco muito."
       },
       {
         "id": "28",
-        "minus": "D",
         "text": "Gosto de agradar os outros e ser popular."
       },
       {
         "id": "29",
-        "minus": "C",
         "text":"Aprecio atividades variadas, não gosto de detalhes."
       },
       {
         "id": "30",
-        "minus": "B",
         "text": "Sou calado, timido e reservado."
       },
       {
         "id": "31",
-        "plus": "A",
         "text": "Sou corajoso, decidido e gosto de arriscar."
       },
       {
         "id": "32",
-        "minus": "A",
         "text": "Costumo aceitar os reveses da vida com paciência e serenidade."
       }
   ]
