@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    function Ajax(){
+    function Ajax($http){
         function get(url, params){
             if(!params){
                 params = {};
@@ -32,6 +32,7 @@
 
     }
 
+    Ajax.$inject = ["$http"];
     angular.module("ajax").factory("Ajax", Ajax);
 
 })();
