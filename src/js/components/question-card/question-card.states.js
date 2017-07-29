@@ -2,8 +2,6 @@
 
     "use strict";
 
-    config.$inject = ["$stateProvider"];
-
     function config($stateProvider){
         var questionState = {
             templateUrl: "/src/js/components/question-card/question-card.template.html",
@@ -14,6 +12,8 @@
 
         $stateProvider.state("question", questionState);
     }
+
+    config.$inject = ["$stateProvider"];
 
     angular.module("disc.components.question-card").config(config);
 

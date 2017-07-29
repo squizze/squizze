@@ -2,10 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.question-card").factory("QuestionStateModel", QuestionStateModel);
-
-    QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
-
     function QuestionStateModel(QuestionsRepository, $q, AnswersModel, $state){
         var model = {
             init: init,
@@ -50,5 +46,9 @@
 
         return model;
     }
+
+    angular.module("disc.components.question-card").factory("QuestionStateModel", QuestionStateModel);
+
+    QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
 
 })();

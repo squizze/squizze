@@ -2,10 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.question-card").factory("QuestionsRepository", QuestionsRepository);
-
-    QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory", "QuestionCardAdapter"];
-
     function QuestionsRepository(QuestionCardApi, $q, $cacheFactory, QuestionCardAdapter){
 
         var model = {
@@ -58,5 +54,9 @@
         return model;
 
     }
+
+    angular.module("disc.components.question-card").factory("QuestionsRepository", QuestionsRepository);
+
+    QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory", "QuestionCardAdapter"];
 
 })();

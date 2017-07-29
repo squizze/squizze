@@ -2,10 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.question-card").factory("QuestionCardApi", QuestionCardApi);
-
-    QuestionCardApi.$inject = ["Ajax"];
-
     function QuestionCardApi(Ajax){
         var restApi = {
             getAllQuestions: getAllQuestions
@@ -17,6 +13,10 @@
 
         return restApi;
     }
+
+    angular.module("disc.components.question-card").factory("QuestionCardApi", QuestionCardApi);
+
+    QuestionCardApi.$inject = ["Ajax"];
 
 
 })();

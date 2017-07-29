@@ -2,10 +2,9 @@
 
     "use strict";
 
-    angular.module("disc.components.home").controller("HomeController", HomeController);
-
     function HomeController(){
-
     }
+
+    angular.module("disc.components.home").controller("HomeController", HomeController);
 
 })();

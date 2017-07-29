@@ -2,10 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.result-screen").config(config);
-
-    config.$inject = ["$stateProvider"];
-
     function config($stateProvider){
 
         var resultScreenState = {
@@ -19,5 +15,9 @@
         $stateProvider.state("resultScreen", resultScreenState);
 
     }
+
+    angular.module("disc.components.result-screen").config(config);
+
+    config.$inject = ["$stateProvider"];
 
 })();

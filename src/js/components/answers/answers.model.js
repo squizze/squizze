@@ -2,10 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.answers").factory("AnswersModel", AnswersModel);
-
-    AnswersModel.$inject = ["ANSWERS_CONSTANT"];
-
     function AnswersModel(ANSWERS_CONSTANT){
         var model = {
             getAnswerById: getAnswerById,
@@ -83,5 +79,9 @@
 
         return model;
     }
+
+    angular.module("disc.components.answers").factory("AnswersModel", AnswersModel);
+
+    AnswersModel.$inject = ["ANSWERS_CONSTANT"];
 
 })();

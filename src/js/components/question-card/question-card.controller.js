@@ -2,8 +2,6 @@
 
     "use strict";
 
-    QuestionController.$inject = ["QuestionStateModel", "$state"];
-
     function QuestionController(QuestionStateModel, $state){
         var vc = this;
         vc.isLoading = true;
@@ -14,6 +12,8 @@
             vc.isLoading = false;
         });
     }
+
+    QuestionController.$inject = ["QuestionStateModel", "$state"];
 
     angular.module("disc.components.question-card").controller("QuestionController", QuestionController);
 
