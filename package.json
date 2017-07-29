@@ -26,5 +26,8 @@
   "dependencies": {
     "angular": "^1.6.5",
     "angular-ui-router": "^1.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0-rc.0"
   }
 }
