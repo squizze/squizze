@@ -5,7 +5,7 @@
     function config($stateProvider){
 
         var resultScreenState = {
-            templateUrl: "/src/js/components/result-screen/result-screen.template.html",
+            templateUrl: "/js/components/result-screen/result-screen.template.html",
             controllerAs: "vc",
             controller: "ResultScreenController",
             bindToController: true,

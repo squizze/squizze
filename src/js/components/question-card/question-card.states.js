@@ -4,7 +4,7 @@
 
     function config($stateProvider){
         var questionState = {
-            templateUrl: "/src/js/components/question-card/question-card.template.html",
+            templateUrl: "/js/components/question-card/question-card.template.html",
             controller: "QuestionController",
             url: "/{questionId:[0-9]{1,2}}",
             controllerAs: "vc"
