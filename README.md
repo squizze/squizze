@@ -17,13 +17,11 @@ Para mais sobre o teste visite a [página da Wikipédia sobre DISC](https://pt.w
 
 ## Para rodar localmente
 
-Por enquanto a sugestão é subir um servidor usando python mesmo:
-
 ```shell
-python -m SimpleHTTPServer 1234
+npm start
 ```
 
-Então acesse a página principal em [http://localhost:1234/src](http://localhost:1234/src).
+Então acesse a página principal em [http://localhost:1234/](http://localhost:1234/).
 
 ## Sobre as motivações para criar esse repositório
 
@@ -34,7 +32,7 @@ Durante esse processo acabei percebendo que um projeto pequeno como esse serve d
 | Projeto  | Prioridade |
 | :--- | ------------- |
 | Adicionar **testes unitários** ao repositório  | muito alta  |
-| Ter **nota A** no codacy | muito alta |
+| [Ter **nota A** no codacy](https://github.com/teles/DISC/projects/1) | muito alta |
 | Fazer um refactoring da api que torne o **modelo de dados ignorante** em relação a regras de negócios  | alta  |
 | Utilizar **webpack** no repositório | alta|
 | Criar uma **progressive web app** a partir desse projeto | alta| 
@@ -43,7 +41,7 @@ Durante esse processo acabei percebendo que um projeto pequeno como esse serve d
 | Utilizar **recursos do ES6** | média |
 | Adicionar **arquivos de map** ao cdigo final | média| 
 | Transformar o código em um **pacote genérico** distribuído via npm | média |
-| Utilizar **npm scripts** como gerenciador de tarefas  | baixa  |
+| [Utilizar **npm scripts** como gerenciador de tarefas](https://github.com/teles/DISC/projects/2)  | baixa  |
 | Substituir diretivas por **component** | baixa |
 
 Ou seja, com um código simples é possível exercitar boas práticas de desenvolvimento :tada:
