@@ -40,10 +40,6 @@
             return _results;
         }
 
-        function _resetResults(){
-            _results = [];
-        }
-
         function calculates(){
             AnswersRepository.init().then(function(){
                 var options = AnswersRepository.getAllOptions();
@@ -56,7 +52,6 @@
                     _results.options[option] = eval(rule);
                 }
             });
-            console.log(_results);
         }
 
         return model;
