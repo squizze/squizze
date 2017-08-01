@@ -2,33 +2,34 @@
 
     "use strict";
 
-    function AnswersModel(ANSWERS_CONSTANT){
+    function AnswersModel(AnswersRepository){
         var model = {
             getAnswerById: getAnswerById,
             addAnswer: addAnswer,
             getResults: getResults,
-            calculates: calculates,
-            options : {}
+            calculates: calculates
         };
 
-        var _results = [];
+        var _answers = {};
+        var _results = {};
 
-        function addAnswer(answer, value){
+        function addAnswer(question, value){
+            _answers[question.id] = value;
+            _results.groups = {};
+            _results.options = {};
 
-            if(!model.options.hasOwnProperty(answer.option)){
-                model.options[answer.option] = {};
-            } else {
-                if(model.options[answer.option].hasOwnProperty(answer.id)){
-                    model.options[answer.option][answer.id] = {};
+            AnswersRepository.init().then(function(){
+                var groups = AnswersRepository.getAllGroups();
+
+                for(var group in groups){
+                    _results.groups[group] = groups[group].map(function(item){
+                        return _answers[item] !== undefined ? _answers[item] : 0;
+                    }).reduce(function(total, num){
+                        return total + num;
+                    });
                 }
-            }
-
-            if(answer.sign === "plus"){
-                model.options[answer.option][answer.id] = Math.abs(value);
-            }else if(answer.sign === "minus"){
-                model.options[answer.option][answer.id] = -Math.abs(value);
-            }
-
+                
+            });
         }
 
         function getAnswerById(answerId){
@@ -44,37 +45,19 @@
         }
 
         function calculates(){
-            _resetResults();
-            var _temp = {};
+            AnswersRepository.init().then(function(){
+                var options = AnswersRepository.getAllOptions();
 
-            for(var option in model.options){
-                _temp[option] = [];
+                for(var option in options){
+                    var rule = options[option].rule;
+                    rule = rule.split(" ").map(function(item){
+                        return item.match(/[^()*+-]/) ? "_results.groups."+item : item;
+                    }).join(" ");
 
-                for(var id in model.options[option]){
-                    _temp[option].push(model.options[option][id]);
+                    _results.options[option] = eval(rule);
                 }
-            }
-
-            for(var _tempItem in _temp){
-                var result = {
-                    result:_temp[_tempItem].reduce(function(a,b){
-                        return a + b;
-                    }),
-                    option: _tempItem
-                };
-
-                if(ANSWERS_CONSTANT[result.option] !== undefined){
-                    angular.extend(result, ANSWERS_CONSTANT[result.option]);
-                }
-
-                _results.push(result);
-
-            }
-
-            _results.sort(function(a,b){
-                return a.option > b.option;
             });
-
+            console.log(_results);
         }
 
         return model;
@@ -82,6 +65,6 @@
 
     angular.module("disc.components.answers").factory("AnswersModel", AnswersModel);
 
-    AnswersModel.$inject = ["ANSWERS_CONSTANT"];
+    AnswersModel.$inject = ["AnswersRepository"];
 
 })();

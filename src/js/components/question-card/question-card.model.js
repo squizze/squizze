@@ -13,11 +13,8 @@
 
             var objectFromData = {
                 text: data.text,
-                id: window.parseInt(data.id),
-                sign: data.plus !== undefined ? "plus" : "minus"
+                id: window.parseInt(data.id)
             };
-
-            objectFromData.option = data[objectFromData.sign];
 
             return objectFromData;
         }

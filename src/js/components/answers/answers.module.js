@@ -2,6 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.answers", []);
+    angular.module("disc.components.answers", ["disc.components.question-card"]);
 
 })();

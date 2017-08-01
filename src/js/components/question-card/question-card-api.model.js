@@ -8,7 +8,7 @@
         };
 
         function getAllQuestions(){
-            return Ajax.get("https://api.myjson.com/bins/qv2rz");
+            return Ajax.get("https://api.myjson.com/bins/aihth");
         }
 
         return restApi;
