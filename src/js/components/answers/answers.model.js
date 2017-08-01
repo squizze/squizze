@@ -53,7 +53,6 @@
                     rule = rule.split(" ").map(function(item){
                         return item.match(/[^()*+-]/) ? "_results.groups."+item : item;
                     }).join(" ");
-
                     _results.options[option] = eval(rule);
                 }
             });
