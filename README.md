@@ -1,6 +1,6 @@
 # DISC
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d058b27bd11e4c039341d4b60c89c931)](https://www.codacy.com/app/josetelesmaciel/teste-disc?utm_source=github.com&utm_medium=referral&utm_content=teles/teste-disc&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b43701becda3457184adb4accd630bb7)](https://www.codacy.com/app/josetelesmaciel/DISC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=teles/DISC&amp;utm_campaign=Badge_Grade)
 
 [Visite o site e descubra seu perfil DISC.](http://disc.surge.sh/src)
 
@@ -16,6 +16,13 @@ Para mais sobre o teste visite a [página da Wikipédia sobre DISC](https://pt.w
 > **Curiosidade:** o criador desse teste também é criador da personagem Mulher Maravilha!
 
 ## Para rodar localmente
+
+Instale as dependências:
+
+```shell
+npm install
+```
+Rode o projeto:
 
 ```shell
 npm start
@@ -33,7 +40,7 @@ Durante esse processo acabei percebendo que um projeto pequeno como esse serve d
 | :--- | ------------- |
 | Adicionar **testes unitários** ao repositório  | muito alta  |
 | [Ter **nota A** no codacy](https://github.com/teles/DISC/projects/1) | muito alta |
-| Fazer um refactoring da api que torne o **modelo de dados ignorante** em relação a regras de negócios  | alta  |
+| [Fazer um refactoring da api que torne o **modelo de dados ignorante** em relação a regras de negócios](https://github.com/teles/DISC/issues/14)  | alta  |
 | Utilizar **webpack** no repositório | alta|
 | Criar uma **progressive web app** a partir desse projeto | alta| 
 | Aplicar **i18n** ao projeto | média |
