@@ -2,6 +2,8 @@
 
     "use strict";
 
+    angular.module("disc.components.answers").constant("ANSWERS_CONSTANT", AnswersConstant);
+
     var AnswersConstant = {
         "A": {
             shortAlias: "D",
@@ -21,6 +23,5 @@
         }
     };
 
-    angular.module("disc.components.answers").constant("ANSWERS_CONSTANT", AnswersConstant);
 
 })();
