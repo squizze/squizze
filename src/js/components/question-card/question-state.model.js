@@ -18,6 +18,15 @@
             return deferred.promise;
         }
 
+        function _goToNextQuestion(){
+            $state.go("question", {"questionId": _nextQuestionId});
+        }
+
+        function _endQuestions(){
+            AnswersModel.calculates();
+            $state.go("resultScreen");
+        }
+
         function registerAnswer(question, value){
             AnswersModel.addAnswer(question, value);
             _nextQuestionId = _questionId + 1;
@@ -28,15 +37,6 @@
                 _endQuestions();
             }
 
-        }
-
-        function _goToNextQuestion(){
-            $state.go("question", {"questionId": _nextQuestionId});
-        }
-
-        function _endQuestions(){
-            AnswersModel.calculates();
-            $state.go("resultScreen");
         }
 
         var model = {

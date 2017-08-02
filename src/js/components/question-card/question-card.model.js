@@ -3,12 +3,6 @@
     "use strict";
 
     function QuestionCardAdapter(){
-        var adapter = {
-            getObjectFromData: getObjectFromData
-        };
-
-        return adapter;
-
         function getObjectFromData(data){
 
             var objectFromData = {
@@ -18,6 +12,12 @@
 
             return objectFromData;
         }
+
+        var adapter = {
+            getObjectFromData: getObjectFromData
+        };
+
+        return adapter;
     }
 
     angular.module("disc.components.question-card").factory("QuestionCardAdapter", QuestionCardAdapter);
