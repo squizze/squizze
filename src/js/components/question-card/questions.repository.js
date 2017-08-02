@@ -57,4 +57,4 @@
 
     QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory", "QuestionCardAdapter"];
 
-})();
+}());

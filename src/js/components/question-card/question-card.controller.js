@@ -17,4 +17,4 @@
 
     angular.module("disc.components.question-card").controller("QuestionController", QuestionController);
 
-})();
+}());

@@ -20,4 +20,4 @@
 
     config.$inject = ["$stateProvider"];
 
-})();
+}());

@@ -63,4 +63,4 @@
 
     AnswersModel.$inject = ["AnswersRepository"];
 
-})();
+}());

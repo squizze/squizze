@@ -22,4 +22,4 @@
 
     angular.module("disc.components.question-card").factory("QuestionCardAdapter", QuestionCardAdapter);
 
-})();
+}());

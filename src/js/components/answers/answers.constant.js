@@ -23,4 +23,4 @@
 
     angular.module("disc.components.answers").constant("ANSWERS_CONSTANT", AnswersConstant);
 
-})();
+}());

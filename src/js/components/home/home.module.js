@@ -4,4 +4,4 @@
 
     angular.module("disc.components.home", ["ui.router"]);
 
-})();
+}());

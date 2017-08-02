@@ -49,4 +49,4 @@
     AnswersRepository.$inject = ["$cacheFactory", "QuestionCardApi", "$q"];
     angular.module("disc.components.answers").factory("AnswersRepository", AnswersRepository);
 
-})();
+}());

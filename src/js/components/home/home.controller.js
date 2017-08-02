@@ -7,4 +7,4 @@
 
     angular.module("disc.components.home").controller("HomeController", HomeController);
 
-})();
+}());

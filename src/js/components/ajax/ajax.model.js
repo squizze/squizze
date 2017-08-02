@@ -35,4 +35,4 @@
     Ajax.$inject = ["$http"];
     angular.module("ajax").factory("Ajax", Ajax);
 
-})();
+}());

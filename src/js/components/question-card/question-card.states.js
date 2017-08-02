@@ -17,5 +17,5 @@
 
     angular.module("disc.components.question-card").config(config);
 
-})();
+}());
 

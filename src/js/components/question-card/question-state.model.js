@@ -51,4 +51,4 @@
 
     QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
 
-})();
+}());
