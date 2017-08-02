@@ -11,7 +11,7 @@
         function init(){
             var deferred = $q.defer();
 
-            if(_cachedAnswers === undefined){
+            if(typeof _cachedAnswers === "undefined"){
                 var promise = QuestionCardApi.getAllQuestions();
                 promise.then(function(results){
                     _answers.options = results.data.options;

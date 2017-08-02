@@ -13,7 +13,7 @@
         function init(){
             var deferred = $q.defer();
 
-            if(_cachedQuestions !== undefined){
+            if(typeof _cachedQuestions !== "undefined"){
                 deferred.resolve(_cachedQuestions);
             }else {
                 var promiseToGetQuestions = QuestionCardApi.getAllQuestions();

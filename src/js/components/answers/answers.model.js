@@ -17,7 +17,7 @@
 
                 for(var group in groups){
                     _results.groups[group] = groups[group].map(function(item){
-                        return _answers[item] !== undefined ? _answers[item] : 0;
+                        return typeof _answers[item] !== "undefined" ? _answers[item] : 0;
                     }).reduce(function(total, num){
                         return total + num;
                     });
