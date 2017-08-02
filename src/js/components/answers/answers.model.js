@@ -27,10 +27,6 @@
             });
         }
 
-        function getAnswerById(answerId){
-            return model.options[answerId];
-        }
-
         function getResults(){
             return _results;
         }
@@ -50,7 +46,6 @@
         }
 
         var model = {
-            getAnswerById: getAnswerById,
             addAnswer: addAnswer,
             getResults: getResults,
             calculates: calculates
