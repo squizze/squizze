@@ -3,11 +3,6 @@
     "use strict";
 
     function QuestionStateModel(QuestionsRepository, $q, AnswersModel, $state){
-        var model = {
-            init: init,
-            registerAnswer: registerAnswer,
-            question: null
-        };
         var _questionId;
         var _nextQuestionId;
 
@@ -44,6 +39,11 @@
             $state.go("resultScreen");
         }
 
+        var model = {
+            init: init,
+            registerAnswer: registerAnswer,
+            question: null
+        };
         return model;
     }
 

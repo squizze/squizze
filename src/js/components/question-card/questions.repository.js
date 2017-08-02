@@ -4,12 +4,6 @@
 
     function QuestionsRepository(QuestionCardApi, $q, $cacheFactory, QuestionCardAdapter){
 
-        var model = {
-            init: init,
-            getById: getById,
-            getLastQuestionId: getLastQuestionId
-        };
-
         var _cachedQuestionsFactory = $cacheFactory("questionsCacheFactory");
         var _cachedQuestions;
         var _questionsById = {};
@@ -51,7 +45,11 @@
             return _lastQuestionId;
         }
 
-        return model;
+        return {
+            init: init,
+            getById: getById,
+            getLastQuestionId: getLastQuestionId
+        };
 
     }
 

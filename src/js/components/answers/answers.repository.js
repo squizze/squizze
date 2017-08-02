@@ -2,15 +2,7 @@
 
     "use strict";
 
-    AnswersRepository.$inject = ["$cacheFactory", "QuestionCardApi", "$q"];
-
     function AnswersRepository($cacheFactory, QuestionCardApi, $q){
-        var model = {
-            init: init,
-            getAllAnswers: getAllAnswers,
-            getAllGroups: getAllGroups,
-            getAllOptions: getAllOptions
-        };
 
         var _answers = {};
         var _cachedAnswersFactory = $cacheFactory("answersCacheFactory");
@@ -46,10 +38,15 @@
             return _answers.options;
         }
 
-        return model;
+        return {
+            init: init,
+            getAllAnswers: getAllAnswers,
+            getAllGroups: getAllGroups,
+            getAllOptions: getAllOptions
+        };
     }
 
-
+    AnswersRepository.$inject = ["$cacheFactory", "QuestionCardApi", "$q"];
     angular.module("disc.components.answers").factory("AnswersRepository", AnswersRepository);
 
 })();

@@ -3,12 +3,6 @@
     "use strict";
 
     function AnswersModel(AnswersRepository){
-        var model = {
-            getAnswerById: getAnswerById,
-            addAnswer: addAnswer,
-            getResults: getResults,
-            calculates: calculates
-        };
 
         var _answers = {};
         var _results = {};
@@ -27,6 +21,7 @@
                     }).reduce(function(total, num){
                         return total + num;
                     });
+
                 }
                 
             });
@@ -53,6 +48,13 @@
                 }
             });
         }
+
+        var model = {
+            getAnswerById: getAnswerById,
+            addAnswer: addAnswer,
+            getResults: getResults,
+            calculates: calculates
+        };
 
         return model;
     }
