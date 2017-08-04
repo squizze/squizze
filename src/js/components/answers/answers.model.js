@@ -6,49 +6,48 @@
 
         var _answers = {};
         var _results = {};
+        var _groups = AnswersRepository.getAllGroups();
+        var _options = AnswersRepository.getAllOptions();
+        var _groupsTotal = {};
 
-        function addAnswer(question, value){
-            _answers[question.id] = value;
-            _results.groups = {};
-            _results.options = {};
-
-            AnswersRepository.init().then(function(){
-                var groups = AnswersRepository.getAllGroups();
-
-                for(var group in groups){
-                    _results.groups[group] = groups[group].map(function(item){
+        function _calculateGroupsValues(){
+            for(var group in _groups){
+                if(_groups.hasOwnProperty(group)){
+                    _groupsTotal[group] = _groups[group].map(function(item){
                         return typeof _answers[item] !== "undefined" ? _answers[item] : 0;
                     }).reduce(function(total, num){
                         return total + num;
                     });
-
                 }
-                
-            });
+            }
+        }
+
+        function addAnswer(question, value){
+            _answers[question.id] = value;
+            _calculateGroupsValues();
+            _calculateResults();
+            console.log(_results);
         }
 
         function getResults(){
             return _results;
         }
 
-        function calculates(){
-            AnswersRepository.init().then(function(){
-                var options = AnswersRepository.getAllOptions();
-
-                for(var option in options){
-                    var rule = options[option].rule;
+        function _calculateResults(){
+            for(var option in _options){
+                if(_options.hasOwnProperty(option)){
+                    var rule = _options[option].rule;
                     rule = rule.split(" ").map(function(item){
-                        return item.match(/[^()*+-]/) ? "_results.groups."+item : item;
+                        return item.match(/[^()*+-]/) ? "_groupsTotal."+item : item;
                     }).join(" ");
-                    _results.options[option] = eval(rule);
+                    _results[option] = eval(rule);
                 }
-            });
+            }
         }
 
         var model = {
             addAnswer: addAnswer,
-            getResults: getResults,
-            calculates: calculates
+            getResults: getResults
         };
 
         return model;
