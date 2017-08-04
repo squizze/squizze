@@ -29,7 +29,8 @@
                     rule = rule.split(" ").map(function(item){
                         return item.match(/[^()*+-]/) ? "_groupsTotal."+item : item;
                     }).join(" ");
-                    _results[option] = eval(rule);
+                    _results[option] = {};
+                    _results[option].total = eval(rule);
                 }
             }
         }
@@ -37,8 +38,7 @@
         function addAnswer(question, value){
             _answers[question.id] = value;
             _calculateGroupsValues();
-            _calculateResults();
-            console.log(_results);
+            _calculateResults();;
         }
 
         function getResults(){
