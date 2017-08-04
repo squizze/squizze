@@ -2,7 +2,7 @@
 
     "use strict";
 
-    function QuestionsRepository(QuestionCardApi, $q, $cacheFactory, QuestionCardAdapter){
+    function QuestionsRepository(QuestionsApi, $q, $cacheFactory, QuestionAdapter){
 
         var _cachedQuestionsFactory = $cacheFactory("questionsCacheFactory");
         var _cachedQuestions;
@@ -16,10 +16,10 @@
             if(typeof _cachedQuestions !== "undefined"){
                 deferred.resolve(_cachedQuestions);
             }else {
-                var promiseToGetQuestions = QuestionCardApi.getAllQuestions();
+                var promiseToGetQuestions = QuestionsApi.getAllQuestions();
 
                 promiseToGetQuestions.then(function(result){
-                    questions = result.data.questions.map(QuestionCardAdapter.getObjectFromData);
+                    questions = result.data.questions.map(QuestionAdapter.getObjectFromData);
                     _cachedQuestionsFactory.put("questionsCacheFactory", questions);
                     _cachedQuestions = _cachedQuestionsFactory.get("questionsCacheFactory");
 
@@ -53,8 +53,8 @@
 
     }
 
-    angular.module("disc.components.question-card").factory("QuestionsRepository", QuestionsRepository);
+    angular.module("disc.components.questions").factory("QuestionsRepository", QuestionsRepository);
 
-    QuestionsRepository.$inject = ["QuestionCardApi", "$q", "$cacheFactory", "QuestionCardAdapter"];
+    QuestionsRepository.$inject = ["QuestionsApi", "$q", "$cacheFactory", "QuestionAdapter"];
 
 }());

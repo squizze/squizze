@@ -15,6 +15,6 @@
 
     QuestionController.$inject = ["QuestionStateModel", "$state"];
 
-    angular.module("disc.components.question-card").controller("QuestionController", QuestionController);
+    angular.module("disc.components.questions").controller("QuestionController", QuestionController);
 
 }());

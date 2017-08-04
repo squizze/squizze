@@ -2,7 +2,7 @@
 
     "use strict";
 
-    function QuestionCardAdapter(){
+    function QuestionAdapter(){
         function getObjectFromData(data){
 
             var objectFromData = {
@@ -20,6 +20,6 @@
         return adapter;
     }
 
-    angular.module("disc.components.question-card").factory("QuestionCardAdapter", QuestionCardAdapter);
+    angular.module("disc.components.questions").factory("QuestionAdapter", QuestionAdapter);
 
 }());

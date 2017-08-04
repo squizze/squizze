@@ -46,7 +46,7 @@
         return model;
     }
 
-    angular.module("disc.components.question-card").factory("QuestionStateModel", QuestionStateModel);
+    angular.module("disc.components.questions").factory("QuestionStateModel", QuestionStateModel);
 
     QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
 

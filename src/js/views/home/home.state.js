@@ -4,7 +4,7 @@
 
     function config($stateProvider){
         var homeState = {
-            templateUrl: "/js/components/home/home.template.html",
+            templateUrl: "/js/views/home/home.template.html",
             controller: "HomeController",
             url: "/"
         };

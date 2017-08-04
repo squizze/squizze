@@ -2,7 +2,7 @@
 
     "use strict";
 
-    function QuestionCardApi(Ajax){
+    function QuestionsApi(Ajax){
         function getAllQuestions(){
             return Ajax.get("https://api.myjson.com/bins/82295");
         }
@@ -12,9 +12,9 @@
         };
     }
 
-    angular.module("disc.components.question-card").factory("QuestionCardApi", QuestionCardApi);
+    angular.module("disc.components.questions").factory("QuestionsApi", QuestionsApi);
 
-    QuestionCardApi.$inject = ["Ajax"];
+    QuestionsApi.$inject = ["Ajax"];
 
 
 }());
