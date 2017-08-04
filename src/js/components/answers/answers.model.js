@@ -38,7 +38,7 @@
         function addAnswer(question, value){
             _answers[question.id] = value;
             _calculateGroupsValues();
-            _calculateResults();;
+            _calculateResults();
         }
 
         function getResults(){
