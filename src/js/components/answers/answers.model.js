@@ -22,17 +22,6 @@
             }
         }
 
-        function addAnswer(question, value){
-            _answers[question.id] = value;
-            _calculateGroupsValues();
-            _calculateResults();
-            console.log(_results);
-        }
-
-        function getResults(){
-            return _results;
-        }
-
         function _calculateResults(){
             for(var option in _options){
                 if(_options.hasOwnProperty(option)){
@@ -43,6 +32,17 @@
                     _results[option] = eval(rule);
                 }
             }
+        }
+
+        function addAnswer(question, value){
+            _answers[question.id] = value;
+            _calculateGroupsValues();
+            _calculateResults();
+            console.log(_results);
+        }
+
+        function getResults(){
+            return _results;
         }
 
         var model = {
