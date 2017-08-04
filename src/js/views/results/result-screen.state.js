@@ -5,18 +5,18 @@
     function config($stateProvider){
 
         var resultScreenState = {
-            templateUrl: "/js/views/result-screen/result-screen.template.html",
+            templateUrl: "/js/views/results/results.template.html",
             controllerAs: "vc",
             controller: "ResultScreenController",
             bindToController: true,
-            url: "/result"
+            url: "/results"
         };
 
         $stateProvider.state("resultScreen", resultScreenState);
 
     }
 
-    angular.module("disc.components.result-screen").config(config);
+    angular.module("disc.views.results").config(config);
 
     config.$inject = ["$stateProvider"];
 

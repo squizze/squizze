@@ -2,6 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.home", ["ui.router"]);
+    angular.module("disc.views.home", ["ui.router"]);
 
 }());

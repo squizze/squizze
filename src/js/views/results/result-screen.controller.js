@@ -7,6 +7,6 @@
         vc.answers = AnswersModel.getResults();
     }
 
-    angular.module("disc.components.result-screen").controller("ResultScreenController", ResultScreenController);
+    angular.module("disc.views.results").controller("ResultScreenController", ResultScreenController);
 
 }());

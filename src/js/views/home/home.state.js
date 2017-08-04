@@ -12,7 +12,7 @@
         $stateProvider.state("home", homeState);
     }
 
-    angular.module("disc.components.home").config(config);
+    angular.module("disc.views.home").config(config);
 
     config.$inject = ["$stateProvider"];
 

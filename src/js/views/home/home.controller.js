@@ -5,6 +5,6 @@
     function HomeController(){
     }
 
-    angular.module("disc.components.home").controller("HomeController", HomeController);
+    angular.module("disc.views.home").controller("HomeController", HomeController);
 
 }());

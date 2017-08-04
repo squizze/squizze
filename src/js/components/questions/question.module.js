@@ -2,6 +2,6 @@
 
     "use strict";
 
-    angular.module("disc.components.questions", ["ui.router", "ajax", "disc.components.answers", "disc.components.result-screen"]);
+    angular.module("disc.components.questions", ["ui.router", "ajax", "disc.components.answers", "disc.views.results"]);
 
 }());
