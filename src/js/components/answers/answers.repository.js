@@ -14,7 +14,7 @@
             if(typeof _cachedAnswers === "undefined"){
                 var promise = QuestionCardApi.getAllQuestions();
                 promise.then(function(results){
-                    _answers.options = results.data.options;
+                    _answers.results = results.data.results;
                     _answers.groups = results.data.groups;
                     _cachedAnswersFactory.put("answersCacheFactory", _answers);
                     _cachedAnswers = _cachedAnswersFactory.get("answersCacheFactory");
@@ -34,15 +34,15 @@
             return _answers.groups;
         }
 
-        function getAllOptions(){
-            return _answers.options;
+        function getAllResults(){
+            return _answers.results;
         }
 
         return {
             init: init,
             getAllAnswers: getAllAnswers,
             getAllGroups: getAllGroups,
-            getAllOptions: getAllOptions
+            getAllResults: getAllResults
         };
     }
 

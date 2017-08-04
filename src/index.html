@@ -6,14 +6,22 @@
 
         <!-- modules -->
         <script src="js/components/ajax/ajax.module.js"></script>
+        <script src="js/disc.module.js"></script>
+        <script src="js/components/start/start.module.js"></script>
         <script src="js/components/question-card/question-card.module.js"></script>
         <script src="js/components/answers/answers.module.js"></script>
         <script src="js/components/result-screen/result-screen.module.js"></script>
         <script src="js/components/home/home.module.js"></script>
 
+        <!-- configs -->
+        <script src="js/disc.config.js"></script>
+
         <!-- outros -->
 
+        <script src="js/components/start/start.run.js"></script>
+        <script src="js/components/start/start.model.js"></script>
         <script src="js/components/ajax/ajax.model.js"></script>
+        <script src="js/index.controller.js"></script>
         <script src="js/components/answers/answers.model.js"></script>
         <script src="js/components/answers/answers.constant.js"></script>
         <script src="js/components/home/home.state.js"></script>
@@ -27,20 +35,12 @@
         <script src="js/components/question-card/question-card.states.js"></script>
         <script src="js/components/question-card/questions.repository.js"></script>
         <script src="js/components/question-card/question-card.controller.js"></script>
-
-        <script type="text/javascript">
-            angular.module("disc", ["disc.components.question-card", "disc.components.home"]);
-            angular.module("disc").config(config);
-
-            function config($urlRouterProvider){
-                $urlRouterProvider.when("", "/");
-            }
-
-        </script>
-
         <title>Teste DISC</title>
     </head>
-    <body>
-        <ui-view></ui-view>
+    <body data-ng-controller="IndexController as vc">
+        <div data-ng-if="vc.start.isLoading">
+            Carregando...
+        </div>
+        <ui-view data-ng-if="vc.start.isLoading === false"></ui-view>
     </body>
 </html>

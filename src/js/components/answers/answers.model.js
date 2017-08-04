@@ -7,7 +7,7 @@
         var _answers = {};
         var _results = {};
         var _groups = AnswersRepository.getAllGroups();
-        var _options = AnswersRepository.getAllOptions();
+        var _options = AnswersRepository.getAllResults();
         var _groupsTotal = {};
 
         function _calculateGroupsValues(){

@@ -1,5 +1,5 @@
 {
-    "options":{
+    "results":{
       "A": {
         "shortName": "D",
         "longName": "Dominance",
@@ -30,6 +30,11 @@
       "C2": [9,12,16,29],
       "D1": [4,17,21],
       "D2": [13,14,22,28]
+    },
+    "options": {
+      "start": 0,
+      "end": 0,
+      "texts": ["Não sei", "Discordo totalmente", "Discordo", "Concordo um pouco", "Concordo", "Concordo totalmente"]
     },
     "questions":[
       {
