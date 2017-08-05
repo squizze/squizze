@@ -38,7 +38,7 @@ Então acesse a página principal em [http://localhost:1234/](http://localhost:1
 npm test
 ```
 
-Um relatório de cobertura será gerado no caminho `/coverage/html/index.html?_ijt=gitam4k2etousv7q41p6ea124a`.
+Um relatório de cobertura será gerado no caminho `/coverage/html/index.html`.
 
 ## Sobre as motivações para criar esse repositório
 
