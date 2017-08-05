@@ -33,19 +33,23 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        "./src/js/**/!(*specs).js": "coverage"
     },
 
 
     // optionally, configure the reporter
     coverageReporter: {
-        type : 'html',
-        dir : 'coverage'
+        dir: "./coverage",
+        reporters: [
+            { type: "html", subdir: "html/" },
+            { type: "cobertura", subdir: "cobertura/", file: "cobertura.xml"}
+        ]
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ["progress"],
+    reporters: ["coverage"],
 
     // web server port
     port: 9876,
@@ -63,6 +67,9 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    phantomjsLauncher: {
+        exitOnResourceError: true
+    },
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
