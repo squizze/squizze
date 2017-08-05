@@ -31,6 +31,14 @@ npm start
 
 Então acesse a página principal em [http://localhost:1234/](http://localhost:1234/).
 
+## Rodando testes
+
+```shell
+npm test
+```
+
+Um relatório de cobertura será gerado no caminho `/coverage/html/index.html?_ijt=gitam4k2etousv7q41p6ea124a`.
+
 ## Sobre as motivações para criar esse repositório
 
 Criei essa repositório após fazer o teste do DISC na empresa onde trabalho. Na ocasião fiz o teste respondendo no papel e contabilizando o resultado manualmente olhando uma tabela. Logo pensei em transformar isso em um single page application.
@@ -39,7 +47,7 @@ Durante esse processo acabei percebendo que um projeto pequeno como esse serve d
 
 | Projeto  | Prioridade |
 | :--- | ------------- |
-| Adicionar **testes unitários** ao repositório  | muito alta  |
+| [Adicionar **testes unitários** ao repositório](https://github.com/teles/DISC/projects/4)  | muito alta  |
 | [Ter **nota A** no codacy](https://github.com/teles/DISC/projects/1) | muito alta |
 | [Fazer um refactoring da api que torne o **modelo de dados ignorante** em relação a regras de negócios](https://github.com/teles/DISC/issues/14)  | alta  |
 | Utilizar **webpack** no repositório | alta|
