@@ -1,6 +1,7 @@
 # DISC
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b43701becda3457184adb4accd630bb7)](https://www.codacy.com/app/josetelesmaciel/DISC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=teles/DISC&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/b43701becda3457184adb4accd630bb7)](https://www.codacy.com/app/josetelesmaciel/DISC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=teles/DISC&amp;utm_campaign=Badge_Coverage)
 
 [Visite o site e descubra seu perfil DISC.](http://disc.surge.sh/src)
 
