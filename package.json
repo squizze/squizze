@@ -4,7 +4,8 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "js/disc.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start"
+    "test": "node_modules/karma/bin/karma start",
+    "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js"
   },
   "repository": {
     "type": "git",
