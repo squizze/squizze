@@ -4,7 +4,7 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "js/disc.js",
   "scripts": {
-    "test": "test"
+    "test": "node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
