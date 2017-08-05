@@ -7,7 +7,7 @@
         var resultScreenState = {
             templateUrl: "/js/views/results/results.template.html",
             controllerAs: "vc",
-            controller: "ResultScreenController",
+            controller: "ResultsStateController",
             bindToController: true,
             url: "/results"
         };
