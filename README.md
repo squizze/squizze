@@ -24,6 +24,13 @@ Instale as dependências:
 ```shell
 npm install
 ```
+
+Crie o arquivo de bundle:
+
+```shell
+npm run build
+```
+
 Rode o projeto:
 
 ```shell
