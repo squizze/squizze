@@ -31,3 +31,4 @@ globals:
     it: false
     expect: false
     inject: false
+    require: false
