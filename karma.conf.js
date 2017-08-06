@@ -33,7 +33,7 @@ module.exports = function(config) {
         "./src/js/components/start/start.run.js",
         "./src/js/components/start/start.model.js",
         "./src/js/components/ajax/ajax.model.js",
-        "./src/js/index.controller.js",
+        "src/js/disc.controller.js",
         "./src/js/components/answers/answers.model.js",
         "./src/js/components/answers/answers.constant.js",
         "./src/js/views/home/home.state.js",

@@ -1,53 +1,46 @@
-(function(){
+function QuestionStateModel(QuestionsRepository, $q, AnswersModel, $state){
+    var _questionId;
+    var _nextQuestionId;
 
-    "use strict";
+    function init(questionId){
+        var deferred = $q.defer();
+        _questionId = questionId;
 
-    function QuestionStateModel(QuestionsRepository, $q, AnswersModel, $state){
-        var _questionId;
-        var _nextQuestionId;
+        QuestionsRepository.init().then(function(){
+            model.question = QuestionsRepository.getById(_questionId);
+            deferred.resolve();
+        });
 
-        function init(questionId){
-            var deferred = $q.defer();
-            _questionId = questionId;
-
-            QuestionsRepository.init().then(function(){
-                model.question = QuestionsRepository.getById(_questionId);
-                deferred.resolve();
-            });
-
-            return deferred.promise;
-        }
-
-        function _goToNextQuestion(){
-            $state.go("question", {"questionId": _nextQuestionId});
-        }
-
-        function _endQuestions(){
-            $state.go("resultScreen");
-        }
-
-        function registerAnswer(question, value){
-            AnswersModel.addAnswer(question, value);
-            _nextQuestionId = _questionId + 1;
-
-            if(QuestionsRepository.getLastQuestionId() >= _nextQuestionId){
-                _goToNextQuestion();
-            }else {
-                _endQuestions();
-            }
-
-        }
-
-        var model = {
-            init: init,
-            registerAnswer: registerAnswer,
-            question: null
-        };
-        return model;
+        return deferred.promise;
     }
 
-    angular.module("disc.components.questions").factory("QuestionStateModel", QuestionStateModel);
+    function _goToNextQuestion(){
+        $state.go("question", {"questionId": _nextQuestionId});
+    }
 
-    QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
+    function _endQuestions(){
+        $state.go("resultScreen");
+    }
 
-}());
+    function registerAnswer(question, value){
+        AnswersModel.addAnswer(question, value);
+        _nextQuestionId = _questionId + 1;
+
+        if(QuestionsRepository.getLastQuestionId() >= _nextQuestionId){
+            _goToNextQuestion();
+        }else {
+            _endQuestions();
+        }
+
+    }
+
+    var model = {
+        init: init,
+        registerAnswer: registerAnswer,
+        question: null
+    };
+    return model;
+}
+
+module.exports = QuestionStateModel;
+

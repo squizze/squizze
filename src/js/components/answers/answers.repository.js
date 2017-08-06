@@ -1,52 +1,44 @@
-(function(){
+function AnswersRepository($cacheFactory, QuestionsApi, $q){
 
-    "use strict";
+    var _answers = {};
+    var _cachedAnswersFactory = $cacheFactory("answersCacheFactory");
+    var _cachedAnswers;
 
-    function AnswersRepository($cacheFactory, QuestionsApi, $q){
+    function init(){
+        var deferred = $q.defer();
 
-        var _answers = {};
-        var _cachedAnswersFactory = $cacheFactory("answersCacheFactory");
-        var _cachedAnswers;
-
-        function init(){
-            var deferred = $q.defer();
-
-            if(typeof _cachedAnswers === "undefined"){
-                var promise = QuestionsApi.getAllQuestions();
-                promise.then(function(results){
-                    _answers.results = results.data.results;
-                    _answers.groups = results.data.groups;
-                    _cachedAnswersFactory.put("answersCacheFactory", _answers);
-                    _cachedAnswers = _cachedAnswersFactory.get("answersCacheFactory");
-                    deferred.resolve(_answers);
-                });
-            }else {
-                deferred.resolve(_cachedAnswers);
-            }
-            return deferred.promise;
+        if(typeof _cachedAnswers === "undefined"){
+            var promise = QuestionsApi.getAllQuestions();
+            promise.then(function(results){
+                _answers.results = results.data.results;
+                _answers.groups = results.data.groups;
+                _cachedAnswersFactory.put("answersCacheFactory", _answers);
+                _cachedAnswers = _cachedAnswersFactory.get("answersCacheFactory");
+                deferred.resolve(_answers);
+            });
+        }else {
+            deferred.resolve(_cachedAnswers);
         }
-
-        function getAllAnswers(){
-            return _answers;
-        }
-
-        function getAllGroups(){
-            return _answers.groups;
-        }
-
-        function getAllResults(){
-            return _answers.results;
-        }
-
-        return {
-            init: init,
-            getAllAnswers: getAllAnswers,
-            getAllGroups: getAllGroups,
-            getAllResults: getAllResults
-        };
+        return deferred.promise;
     }
 
-    AnswersRepository.$inject = ["$cacheFactory", "QuestionsApi", "$q"];
-    angular.module("disc.components.answers").factory("AnswersRepository", AnswersRepository);
+    function getAllAnswers(){
+        return _answers;
+    }
 
-}());
+    function getAllGroups(){
+        return _answers.groups;
+    }
+
+    function getAllResults(){
+        return _answers.results;
+    }
+
+    return {
+        init: init,
+        getAllAnswers: getAllAnswers,
+        getAllGroups: getAllGroups,
+        getAllResults: getAllResults
+    };
+}
+module.exports = AnswersRepository;

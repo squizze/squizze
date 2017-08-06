@@ -1,11 +1,5 @@
-(function(){
+function config($urlRouterProvider){
+    $urlRouterProvider.when("", "/");
+}
 
-    "use strict";
-
-    function config($urlRouterProvider){
-        $urlRouterProvider.when("", "/");
-    }
-
-    angular.module("disc").config(config);
-
-}());
+module.exports = config;

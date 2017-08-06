@@ -1,20 +1,11 @@
-(function(){
-
-    "use strict";
-
-    function QuestionsApi(Ajax){
-        function getAllQuestions(){
-            return Ajax.get("https://api.myjson.com/bins/82295");
-        }
-
-        return {
-            getAllQuestions: getAllQuestions
-        };
+function QuestionsApi(Ajax){
+    function getAllQuestions(){
+        return Ajax.get("https://api.myjson.com/bins/82295");
     }
 
-    angular.module("disc.components.questions").factory("QuestionsApi", QuestionsApi);
+    return {
+        getAllQuestions: getAllQuestions
+    };
+}
 
-    QuestionsApi.$inject = ["Ajax"];
-
-
-}());
+module.exports = QuestionsApi;

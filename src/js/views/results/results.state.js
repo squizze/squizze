@@ -1,23 +1,14 @@
-(function(){
+function ResultsConfig($stateProvider){
 
-    "use strict";
+    var resultScreenState = {
+        templateUrl: "/src/js/views/results/results.template.html",
+        controllerAs: "vc",
+        controller: "ResultsStateController",
+        bindToController: true,
+        url: "/results"
+    };
 
-    function config($stateProvider){
+    $stateProvider.state("resultScreen", resultScreenState);
+}
 
-        var resultScreenState = {
-            templateUrl: "/js/views/results/results.template.html",
-            controllerAs: "vc",
-            controller: "ResultsStateController",
-            bindToController: true,
-            url: "/results"
-        };
-
-        $stateProvider.state("resultScreen", resultScreenState);
-
-    }
-
-    angular.module("disc.views.results").config(config);
-
-    config.$inject = ["$stateProvider"];
-
-}());
+module.exports = ResultsConfig;
