@@ -2,7 +2,7 @@
 
     "use strict";
 
-    var Ajax = require("./ajax.model.js");
+    var Ajax = require("./ajax.model");
     Ajax.$inject = ["$http"];
 
     angular.module("ajax", []);

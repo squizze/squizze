@@ -2,9 +2,9 @@
 
     "use strict";
 
-    var AnswersConstant = require("./answers.constant.js");
-    var AnswersModel = require("./answers.model.js");
-    var AnswersRepository = require("./answers.repository.js");
+    var AnswersConstant = require("./answers.constant");
+    var AnswersModel = require("./answers.model");
+    var AnswersRepository = require("./answers.repository");
 
     AnswersModel.$inject = ["AnswersRepository"];
     AnswersRepository.$inject = ["$cacheFactory", "QuestionsApi", "$q"];

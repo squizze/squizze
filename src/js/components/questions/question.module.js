@@ -2,12 +2,12 @@
 
     "use strict";
 
-    var QuestionController = require("./question.controller.js");
-    var QuestionsConfig = require("./question.states.js");
-    var QuestionAdapter = require("./question-adapter.model.js");
-    var QuestionsApi = require("./question-api.model.js");
-    var QuestionStateModel = require("./question-state.model.js");
-    var QuestionsRepository = require("./questions.repository.js");
+    var QuestionController = require("./question.controller");
+    var QuestionsConfig = require("./question.states");
+    var QuestionAdapter = require("./question-adapter.model");
+    var QuestionsApi = require("./question-api.model");
+    var QuestionStateModel = require("./question-state.model");
+    var QuestionsRepository = require("./questions.repository");
 
     QuestionController.$inject = ["QuestionStateModel", "$state"];
     QuestionsConfig.$inject = ["$stateProvider"];

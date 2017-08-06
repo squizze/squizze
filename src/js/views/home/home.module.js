@@ -1,8 +1,8 @@
 (function(){
 
     "use strict";
-    var HomeController = require("./home.controller.js");
-    var HomeConfig = require("./home.state.js");
+    var HomeController = require("./home.controller");
+    var HomeConfig = require("./home.state");
 
     HomeConfig.$inject = ["$stateProvider"];
 

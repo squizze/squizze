@@ -2,8 +2,8 @@
 
     "use strict";
 
-    var StartModel = require("./start.model.js");
-    var StartRun = require("./start.run.js");
+    var StartModel = require("./start.model");
+    var StartRun = require("./start.run");
 
     StartModel.$inject = [];
     StartRun.$inject = ["AnswersRepository", "QuestionsRepository", "$q", "StartModel"];

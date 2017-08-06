@@ -2,8 +2,8 @@
 
     "use strict";
 
-    var ResultsStateController = require("./results.controller.js");
-    var ResultsConfig = require("./results.state.js");
+    var ResultsStateController = require("./results.controller");
+    var ResultsConfig = require("./results.state");
 
     ResultsConfig.$inject = ["$stateProvider"];
 
