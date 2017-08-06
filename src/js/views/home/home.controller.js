@@ -1,2 +1,2 @@
-function HomeController(){};
+function HomeController(){}
 module.exports = HomeController;

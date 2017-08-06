@@ -66,7 +66,7 @@ module.exports = function(config) {
         reporters: [
             { type: "html", subdir: "html/" },
             { type: "cobertura", subdir: "cobertura/", file: "cobertura.xml"},
-            { type: 'lcov', subdir: 'lcov/' }
+            { type: "lcov", subdir: "lcov/" }
         ]
     },
 
