@@ -1,23 +1,15 @@
 language: node_js
 node_js:
-    - 5.0
-script:
-    - npm i
-    - npm bundle
-    - rm .gitignore
-    - node_modules/.bin/gh-pages-travis
-    - bundle exec gh-pages-travis
-env:
-    global:
-        - DEPLOY_BRANCH="master"
-        - SOURCE_DIR="."
-        - TARGET_BRANCH="gh-pages"
-        - SSH_KEY="id_rsa"
-        - GIT_NAME="travis"
-        - GIT_EMAIL="josetelesmaciel@gmail.com"
+  - 5.0
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
 cache:
-    directories:
-        - node_modules
+  directories:
+    - node_modules
 before_install:
-    - openssl aes-256-cbc -K $encrypted_d27f14c0895d_key -iv $encrypted_d27f14c0895d_iv
-    -in id_rsa.pub.enc -out id_rsa.pub -d
+  - rm .gitignore
+  - npm run build
