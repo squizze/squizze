@@ -11,5 +11,6 @@ cache:
   directories:
     - node_modules
 before_install:
+  - npm i
   - rm .gitignore
   - npm run build
