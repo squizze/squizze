@@ -1,12 +1,14 @@
 function ResultsConfig($stateProvider){
 
     var resultScreenState = {
-        templateUrl: "/src/js/views/results/results.template.html",
+        templateUrl: "./src/js/views/results/results.template.html",
         controllerAs: "vc",
         controller: "ResultsStateController",
         bindToController: true,
         url: "/results"
     };
+
+    console.log("config");
 
     $stateProvider.state("resultScreen", resultScreenState);
 }
