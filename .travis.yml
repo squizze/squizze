@@ -10,7 +10,8 @@ deploy:
 cache:
   directories:
     - node_modules
-before_install:
-  - npm i
+install:
+  - npm install
+script:
   - rm .gitignore
   - npm run build
