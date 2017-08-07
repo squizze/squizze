@@ -36,6 +36,7 @@
     "common.js": "^1.1.1",
     "connect": "^3.6.2",
     "eslint": "^4.0.0-rc.0",
+    "gh-pages-travis": "^1.0.4",
     "jasmine": "^2.7.0",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
