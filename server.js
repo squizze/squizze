@@ -1,6 +1,6 @@
 var connect = require("connect");
 var serveStatic = require("serve-static");
 
-connect().use(serveStatic(__dirname)).listen(1234, function(){
-    console.log("Server running on 1234...");
+connect().use(serveStatic(__dirname)).listen(8765, function(){
+    console.log("Server running on 8765...");
 });

@@ -1,8 +1,11 @@
 # DISC
 
+[![Build Status](https://travis-ci.org/teles/DISC.svg?branch=master)](https://travis-ci.org/teles/DISC)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b43701becda3457184adb4accd630bb7)](https://www.codacy.com/app/josetelesmaciel/DISC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=teles/DISC&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/b43701becda3457184adb4accd630bb7)](https://www.codacy.com/app/josetelesmaciel/DISC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=teles/DISC&amp;utm_campaign=Badge_Coverage)
 [![Gitter chat](https://badges.gitter.im/teles/DISC.png)](https://gitter.im/teles/DISC)
+[![dependencies Status](https://david-dm.org/teles/DISC/status.svg)](https://david-dm.org/teles/DISC)
+[![devDependencies Status](https://david-dm.org/teles/DISC/dev-status.svg)](https://david-dm.org/teles/DISC?type=dev)
 
 [Visite o site e descubra seu perfil DISC.](http://disc.surge.sh/src)
 
@@ -37,7 +40,7 @@ Rode o projeto:
 npm start
 ```
 
-Então acesse a página principal em [http://localhost:1234/](http://localhost:1234/).
+Então acesse a página principal em [http://localhost:8765/](http://localhost:8765/).
 
 ## Rodando testes
 

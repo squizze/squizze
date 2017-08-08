@@ -1,8 +1,8 @@
 {
-  "name": "teste-disc",
+  "name": "DISC",
   "version": "1.0.0",
   "description": "Teste de perfil comportamental DISC.",
-  "main": "js/disc.js",
+  "main": "src/js/disc.js",
   "scripts": {
     "test": "node_modules/karma/bin/karma start",
     "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teles/teste-disc.git"
+    "url": "git+https://github.com/teles/DISC.git"
   },
   "keywords": [
     "test",
@@ -28,10 +28,11 @@
   "homepage": "https://github.com/teles/teste-disc#readme",
   "dependencies": {
     "angular": "^1.6.5",
-    "angular-ui-router": "^1.0.3"
+    "@uirouter/angularjs": "^1.0.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.5",
+    "angular-template-cache": "^1.2.0",
     "browserify": "^14.4.0",
     "codacy-coverage": "^2.0.2",
     "common.js": "^1.1.1",

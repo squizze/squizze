@@ -3,7 +3,7 @@
     "use strict";
 
     require("angular/angular.min");
-    require("angular-ui-router/release/angular-ui-router.min");
+    require("@uirouter/angularjs/release/angular-ui-router.min");
     require("./disc.module");
     require("./templates/templates.module");
     require("./components/ajax/ajax.module");

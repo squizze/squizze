@@ -8,8 +8,6 @@ function ResultsConfig($stateProvider){
         url: "/results"
     };
 
-    console.log("config");
-
     $stateProvider.state("resultScreen", resultScreenState);
 }
 
