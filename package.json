@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/teles/teste-disc#readme",
   "dependencies": {
-    "angular": "^1.6.5",
-    "@uirouter/angularjs": "^1.0.3"
+    "@uirouter/angularjs": "^1.0.3",
+    "angular": "^1.6.5"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.5",
