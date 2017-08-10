@@ -4,7 +4,7 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "src/js/disc.js",
   "scripts": {
-    "test": "node node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "test": "node node_modules/karma/bin/karma start --browsers PhantomJS",
     "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
     "build": "node node_modules/browserify/bin/cmd.js ./src/js/disc.js -o bundle.js",
     "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s browserify --no-new-module -m disc.templates"
@@ -33,17 +33,19 @@
   "devDependencies": {
     "angular-mocks": "1.6.5",
     "angular-template-cache": "1.2.0",
-    "browserify": "14.4.0",
+    "browserify": "^14.4.0",
     "codacy-coverage": "2.0.2",
     "common.js": "1.1.1",
     "connect": "3.6.2",
     "eslint": "4.0.0-rc.0",
     "jasmine": "2.7.0",
     "karma": "1.7.0",
+    "karma-browserify": "^5.1.1",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.1",
     "karma-jasmine": "0.1.0",
     "karma-phantomjs-launcher": "1.0.4",
-    "serve-static": "1.12.3"
+    "serve-static": "1.12.3",
+    "watchify": "^3.9.0"
   }
 }
