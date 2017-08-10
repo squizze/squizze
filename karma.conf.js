@@ -41,6 +41,7 @@ module.exports = function(config) {
             "./src/js/views/home/home.state.js",
             "./src/js/views/home/home.controller.js",
             "./src/js/components/answers/answers.repository.js",
+            "./src/js/components/answers/answers.repository.specs.js",
             "src/js/views/results/results.state.js",
             "src/js/views/results/results.controller.js",
             "./src/js/components/questions/question-api.model.js",
