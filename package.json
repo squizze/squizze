@@ -4,7 +4,7 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "src/js/disc.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start",
+    "test": "node node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
     "build": "node node_modules/browserify/bin/cmd.js ./src/js/disc.js -o bundle.js",
     "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s browserify --no-new-module -m disc.templates"

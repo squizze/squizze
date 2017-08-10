@@ -29,6 +29,8 @@ module.exports = function(config) {
             "./src/js/components/answers/answers.module.js",
             "src/js/views/results/results.module.js",
             "./src/js/views/home/home.module.js",
+            "./src/js/mocks/mocks.module.js",
+            "./src/js/mocks/questions-and-options.mock.js",
             "./src/js/disc.config.js",
             "./src/js/components/start/start.run.js",
             "./src/js/components/start/start.model.js",
