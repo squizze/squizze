@@ -1,14 +1,8 @@
-// Karma configuration
-// Generated on Tue Aug 01 2017 01:22:24 GMT-0300 (BRT)
-
 module.exports = function(config) {
 
-    var jsFiles = [
-        "./src/js/disc.js"
-    ];
-
     config.set({
-        frameworks: ["jasmine", "browserify"],
+        basePath: "",
+        frameworks: ["browserify", "jasmine"],
         autoWatch: true,
         plugins: [
             "karma-jasmine",
@@ -16,10 +10,10 @@ module.exports = function(config) {
             "karma-phantomjs-launcher",
             "karma-coverage"
         ],
-        files: jsFiles,
+        files: ["./src/js/components/ajax/ajax.specs.js"],
         exclude: [],
         preprocessors: {
-            "./src/js/tests/tests.js": ["browserify"],
+            "./src/js/components/ajax/ajax.specs.js": ["browserify"],
             "./src/js/**/!(*specs).js": ["coverage"]
         },
         browserify: {
