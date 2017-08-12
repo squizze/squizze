@@ -16,7 +16,7 @@ module.exports = function(config) {
         exclude: [],
         preprocessors: {
             "./src/js/tests/tests.js": ["browserify"],
-            "./src/js/**/*.*.js": ["coverage"]
+            "./src/js/**/*.js": ["coverage"]
         },
         browserify: {
             watch: true,

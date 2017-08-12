@@ -1,4 +1,3 @@
-require("angular");
 require("angular-mocks");
 
 var Ajax = require("./ajax.model.js");

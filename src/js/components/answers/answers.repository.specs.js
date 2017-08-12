@@ -1,9 +1,6 @@
 "use strict";
-
-require("angular");
-require("angular-mocks");
 var AnswersRepository = require("./answers.repository");
-var QuestionsAndOptionsMock = require("../../tests/questions-and-options.mock");
+var $cacheFactory;
 
 describe("[FILMES2017] Testa o AnswersRepository", function(){
 
@@ -11,20 +8,19 @@ describe("[FILMES2017] Testa o AnswersRepository", function(){
         angular.mock.module("disc.components.answers");
     });
 
-    beforeEach(inject(function($injector) {
-        AnswersRepository = $injector.get(AnswersRepository);
-        QuestionsAndOptionsMock = $injector.get(QuestionsAndOptionsMock);
-        // $httpBackend = $injector.get("$httpBackend");
-        QuestionsAndOptionsMock.setupMocks();
+    beforeEach( inject( function($injector) {
+        AnswersRepository = $injector.get("AnswersRepository");
+        $cacheFactory = $injector.get("$cacheFactory");
     }));
 
-    it("[LOGAN] AnswersRepository deve existir", function(){
+    it("[GUARDIANS_OF_GALAXY_2] existe o AnswersRepository", function(){
         expect(AnswersRepository).toBeDefined();
+        expect($cacheFactory).toBeDefined();
     });
 
-    it("[SPIDERMAN_HOMECOMING] o init funciona", function(){
-        AnswersRepository.init().then(function(result){
-            expect(result).toBeDefined();
+    it("[LOGAN] existe o init", function(){
+        AnswersRepository.init().then(function(results){
+            expect(results).toBeDefined();
         });
     });
 
