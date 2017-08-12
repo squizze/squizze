@@ -1,6 +1,7 @@
 (function(){
 
     "use strict";
+    var angular = require("angular");
 
     var Ajax = require("./ajax.model");
     Ajax.$inject = ["$http"];

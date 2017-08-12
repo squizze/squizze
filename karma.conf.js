@@ -1,5 +1,8 @@
 module.exports = function(config) {
 
+    var files = [
+
+    ];
     config.set({
         basePath: "",
         frameworks: ["browserify", "jasmine"],
@@ -11,11 +14,17 @@ module.exports = function(config) {
             "karma-coverage"
         ],
         files: [
-            "./src/js/tests/tests.js"
+            // "./node_modules/common.js/lib/index.js",
+            // "./node_modules/angular/angular.min.js",
+            // "./node_modules/angular-mocks/angular-mocks.js",
+            // "./node_modules/@uirouter/angularjs/lib/index.js",
+            "./src/js/**/*.js"
         ],
         exclude: [],
         preprocessors: {
-            "./src/js/tests/tests.js": ["browserify"],
+            "./src/js/disc.module.js": ["browserify"],
+            "./src/js/**/*.module.js": ["browserify"],
+            "./src/js/tests/**.*js": ["browserify"],
             "./src/js/**/*.js": ["coverage"]
         },
         browserify: {

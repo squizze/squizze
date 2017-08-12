@@ -2,12 +2,12 @@
   "name": "DISC",
   "version": "1.0.0",
   "description": "Teste de perfil comportamental DISC.",
-  "main": "src/js/disc.js",
+  "main": "src/js/index.js",
   "scripts": {
     "test": "karma start --browsers PhantomJS",
     "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
-    "build": "browserify ./src/js/disc.js -o bundle.js",
-    "watch": "watchify ./src/js/disc.js -o bundle.js",
+    "build": "browserify ./src/js/index.js -o bundle.js",
+    "watch": "watchify ./src/js/index.js -o bundle.js",
     "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s browserify --no-new-module -m disc.templates"
   },
   "repository": {
@@ -24,9 +24,9 @@
   "author": "Teles <josetelesmaciel@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/teles/teste-disc/issues"
+    "url": "https://github.com/teles/DISC/issues"
   },
-  "homepage": "https://github.com/teles/teste-disc#readme",
+  "homepage": "https://github.com/teles/DISCc#readme",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.6.5"
