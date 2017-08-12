@@ -1,4 +1,7 @@
-var Ajax = require("ajax.model.js");
+require("angular");
+require("angular-mocks");
+
+var Ajax = require("./ajax.model.js");
 
 describe("Ajax tests", function () {
 

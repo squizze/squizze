@@ -1,20 +1,21 @@
 "use strict";
 
+require("angular");
+require("angular-mocks");
+var AnswersRepository = require("./answers.repository");
+var QuestionsAndOptionsMock = require("../../tests/questions-and-options.mock");
+
 describe("[FILMES2017] Testa o AnswersRepository", function(){
-
-
-    var AnswersRepository;
-    // var $httpBackend;
 
     beforeEach(function(){
         angular.mock.module("disc.components.answers");
-        angular.mock.module("disc.tests");
     });
 
     beforeEach(inject(function($injector) {
-        AnswersRepository = $injector.get("AnswersRepository");
+        AnswersRepository = $injector.get(AnswersRepository);
+        QuestionsAndOptionsMock = $injector.get(QuestionsAndOptionsMock);
         // $httpBackend = $injector.get("$httpBackend");
-        $injector.get("QuestionsAndOptionsMock").setupMocks();
+        QuestionsAndOptionsMock.setupMocks();
     }));
 
     it("[LOGAN] AnswersRepository deve existir", function(){

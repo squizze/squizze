@@ -1,7 +1,7 @@
 (function(){
 
     "use strict";
-
-    require("./src/js/disc");
+    require("../components/ajax/ajax.specs");
+    //require("../components/answers/answers.repository.specs");
 
 }());

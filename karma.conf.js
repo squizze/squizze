@@ -10,11 +10,13 @@ module.exports = function(config) {
             "karma-phantomjs-launcher",
             "karma-coverage"
         ],
-        files: ["./src/js/components/ajax/ajax.specs.js"],
+        files: [
+            "./src/js/tests/tests.js"
+        ],
         exclude: [],
         preprocessors: {
-            "./src/js/components/ajax/ajax.specs.js": ["browserify"],
-            "./src/js/**/!(*specs).js": ["coverage"]
+            "./src/js/tests/tests.js": ["browserify"],
+            "./src/js/**/*.*.js": ["coverage"]
         },
         browserify: {
             watch: true,
