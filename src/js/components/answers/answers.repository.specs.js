@@ -8,7 +8,7 @@ describe("[FILMES2017] Testa o AnswersRepository", function(){
 
     beforeEach(function(){
         angular.mock.module("disc.components.answers");
-        angular.mock.module("disc.mocks");
+        angular.mock.module("disc.tests");
     });
 
     beforeEach(inject(function($injector) {

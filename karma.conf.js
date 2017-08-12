@@ -4,40 +4,7 @@
 module.exports = function(config) {
 
     var jsFiles = [
-        "./src/js/components/ajax/ajax.model.js",
-        "./src/js/components/ajax/ajax.module.js",
-        "./src/js/components/ajax/ajax.specs.js",
-        "./src/js/components/answers/answers.constant.js",
-        "./src/js/components/answers/answers.model.js",
-        "./src/js/components/answers/answers.module.js",
-        "./src/js/components/answers/answers.repository.js",
-        "./src/js/components/answers/answers.repository.specs.js",
-        "./src/js/components/questions/question-adapter.model.js",
-        "./src/js/components/questions/question-api.model.js",
-        "./src/js/components/questions/question-state.model.js",
-        "./src/js/components/questions/question.controller.js",
-        "./src/js/components/questions/question.module.js",
-        "./src/js/components/questions/question.states.js",
-        "./src/js/components/questions/questions.repository.js",
-        "./src/js/components/start/start.model.js",
-        "./src/js/components/start/start.module.js",
-        "./src/js/components/start/start.run.js",
-        "./src/js/disc.config.js",
-        "./src/js/disc.controller.js",
-        "./src/js/disc.module.js",
-        "./src/js/templates/templates.module.js",
-        "./src/js/templates/templates.run.js",
-        "./src/js/views/home/home.controller.js",
-        "./src/js/views/home/home.module.js",
-        "./src/js/views/home/home.state.js",
-        "./src/js/views/results/results.controller.js",
-        "./src/js/views/results/results.module.js",
-        "./src/js/views/results/results.state.js",
-        // "./src/js/disc.js",
-        "./node_modules/angular/angular.js",
-        "./node_modules/angular-mocks/angular-mocks.js",
-        "./src/js/mocks/mocks.module.js",
-        "./src/js/mocks/questions-and-options.mock.js"
+        "./src/js/disc.js"
     ];
 
     config.set({
@@ -52,7 +19,7 @@ module.exports = function(config) {
         files: jsFiles,
         exclude: [],
         preprocessors: {
-            "./src/js/**/*.js": ["browserify"],
+            "./src/js/tests/tests.js": ["browserify"],
             "./src/js/**/!(*specs).js": ["coverage"]
         },
         browserify: {
@@ -70,7 +37,7 @@ module.exports = function(config) {
         reporters: ["coverage", "progress"],
         port: 9876,
         colors: true,
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
         phantomjsLauncher: {
             exitOnResourceError: true
         },
