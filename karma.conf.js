@@ -1,8 +1,5 @@
 module.exports = function(config) {
 
-    var files = [
-
-    ];
     config.set({
         basePath: "",
         frameworks: ["browserify", "jasmine"],
@@ -16,21 +13,23 @@ module.exports = function(config) {
         files: [
             "./node_modules/angular/angular.min.js",
             "./src/js/tests/**.*js"
-            // "./node_modules/common.js/lib/index.js",
-            // "./node_modules/angular-mocks/angular-mocks.js",
-            // "./node_modules/@uirouter/angularjs/lib/index.js",
-            // "./src/js/**/*.js"
         ],
-        exclude: [],
         preprocessors: {
-            // "./src/js/disc.module.js": ["browserify"],
-            // "./src/js/**/*.module.js": ["browserify"],
             "./src/js/tests/**.*js": ["browserify"],
-            // "./src/js/**/*.js": ["coverage"]
+            "./src/js/tests/tests.js": ["browserify"]
         },
         browserify: {
             watch: true,
-            debug: true
+            debug: true,
+            transform: [
+                ["browserify-istanbul",
+                    {
+                        instrumenterConfig: {
+                            embedSource: true   // this is important for HTML reports
+                        }
+                    }
+                ]
+            ]
         },
         coverageReporter: {
             dir: "./coverage",
@@ -49,6 +48,12 @@ module.exports = function(config) {
         },
         browsers: ["PhantomJS"],
         singleRun: false,
-        concurrency: Infinity
+        concurrency: Infinity,
+        thresholdReporter: {
+            statements: 60,
+            branches: 60,
+            functions: 60,
+            lines: 60
+        }
     });
 };
