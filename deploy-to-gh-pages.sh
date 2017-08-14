@@ -10,7 +10,7 @@ cat ./.gitignore
 npm install
 npm run template-cache
 npm run build
-npm run test
+npm run single-test
 npm run coverage
 git add bundle.js
 ls

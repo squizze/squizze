@@ -4,6 +4,7 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "src/js/index.js",
   "scripts": {
+    "single-test": "karma start --single-run --browsers PhantomJS",
     "test": "karma start --browsers PhantomJS",
     "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
     "build": "browserify ./src/js/index.js -o bundle.js",
