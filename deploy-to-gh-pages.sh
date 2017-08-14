@@ -10,6 +10,8 @@ cat ./.gitignore
 npm install
 npm run template-cache
 npm run build
+npm run test
+npm run coverage
 git add bundle.js
 ls
 git commit -m "Atualizando gh-pages via travis-ci"
