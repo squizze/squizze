@@ -15,7 +15,7 @@ module.exports = function(config) {
             "./src/js/tests/**.*js"
         ],
         preprocessors: {
-            "./src/js/tests/**.*js": ["browserify"],
+            "./src/js/tests/!(specs).js": ["browserify"],
             "./src/js/tests/tests.js": ["browserify"]
         },
         browserify: {
