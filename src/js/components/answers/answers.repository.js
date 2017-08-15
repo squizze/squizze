@@ -9,6 +9,7 @@ function AnswersRepository($cacheFactory, QuestionsApi, $q){
 
         if(typeof _cachedAnswers === "undefined"){
             var promise = QuestionsApi.getAllQuestions();
+
             promise.then(function(results){
                 _answers.results = results.data.results;
                 _answers.groups = results.data.groups;
@@ -17,8 +18,10 @@ function AnswersRepository($cacheFactory, QuestionsApi, $q){
                 deferred.resolve(_answers);
             });
         }else {
+            console.log(_cachedAnswers);
             deferred.resolve(_cachedAnswers);
         }
+
         return deferred.promise;
     }
 
