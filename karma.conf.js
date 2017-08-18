@@ -2,34 +2,24 @@ module.exports = function(config) {
 
     config.set({
         basePath: "",
-        frameworks: ["browserify", "jasmine"],
+        frameworks: ["jasmine"],
         autoWatch: true,
         plugins: [
             "karma-jasmine",
-            "karma-browserify",
             "karma-phantomjs-launcher",
             "karma-coverage"
         ],
         files: [
             "./node_modules/angular/angular.min.js",
-            "./src/js/tests/**.*js"
+            "./node_modules/angular-mocks/angular-mocks.js",
+            "./src/js/tests/mocks.module.js",
+            "./src/js/tests/questions-and-options.mock.js",
+            "./src/js/**/*.module.*js",
+            "./src/js/**/**.*js"
         ],
         preprocessors: {
-            "./src/js/tests/!(specs).js": ["browserify"],
-            "./src/js/tests/tests.js": ["browserify"]
-        },
-        browserify: {
-            watch: true,
-            debug: true,
-            transform: [
-                ["browserify-istanbul",
-                    {
-                        instrumenterConfig: {
-                            embedSource: true   // this is important for HTML reports
-                        }
-                    }
-                ]
-            ]
+            "./src/js/tests/!(specs).js": ["coverage"],
+            "./src/js/tests/tests.js": ["coverage"]
         },
         coverageReporter: {
             dir: "./coverage",

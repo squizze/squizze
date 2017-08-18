@@ -177,6 +177,6 @@ function QuestionsAndOptionsMock($httpBackend) {
         setupMocks: setupMocks
     };
 }
-
-module.exports = QuestionsAndOptionsMock;
+QuestionsAndOptionsMock.$inject = ["$httpBackend"];
+angular.module("disc.mocks").factory("QuestionsAndOptionsMock", QuestionsAndOptionsMock);
 
