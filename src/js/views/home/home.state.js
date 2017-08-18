@@ -9,4 +9,5 @@ function HomeConfig($stateProvider){
     $stateProvider.state("home", homeState);
 }
 
-module.exports = HomeConfig;
+HomeConfig.$inject = ["$stateProvider"];
+angular.module("disc.views.home").config(HomeConfig);

@@ -42,5 +42,6 @@ function QuestionStateModel(QuestionsRepository, $q, AnswersModel, $state){
     return model;
 }
 
-module.exports = QuestionStateModel;
+angular.module("disc.components.questions").factory("QuestionStateModel", QuestionStateModel);
+QuestionStateModel.$inject = ["QuestionsRepository", "$q", "AnswersModel", "$state"];
 

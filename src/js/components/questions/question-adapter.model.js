@@ -15,5 +15,4 @@ function QuestionAdapter(){
 
     return adapter;
 }
-
-module.exports = QuestionAdapter;
+angular.module("disc.components.questions").factory("QuestionAdapter", QuestionAdapter);

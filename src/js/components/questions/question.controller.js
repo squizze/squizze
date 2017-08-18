@@ -9,4 +9,5 @@ function QuestionController(QuestionStateModel, $state){
     });
 }
 
-module.exports =  QuestionController;
+QuestionController.$inject = ["QuestionStateModel", "$state"];
+angular.module("disc.components.questions").controller("QuestionController", QuestionController);

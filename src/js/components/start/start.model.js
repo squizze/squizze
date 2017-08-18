@@ -4,5 +4,5 @@ function StartModel(){
     };
     return model;
 }
-
-module.exports = StartModel;
+StartModel.$inject = [];
+angular.module("disc.components.start").factory("StartModel", StartModel);

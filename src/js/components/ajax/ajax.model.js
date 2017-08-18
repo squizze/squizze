@@ -1,3 +1,7 @@
+
+angular.module("ajax").factory("Ajax", Ajax);
+Ajax.$inject = ["$http"];
+
 function Ajax($http){
     function get(url, params){
         if(!params){
@@ -27,7 +31,5 @@ function Ajax($http){
         get: get
     };
 }
-
-module.exports = Ajax;
 
 

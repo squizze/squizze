@@ -1,7 +1,55 @@
 <html data-ng-app="disc">
     <!DOCTYPE html>
     <head>
-        <script src="bundle.js"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="src/js/components/ajax/ajax.module.js"></script>
+        <script type="text/javascript" src="src/js/components/answers/answers.module.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/question.module.js"></script>
+        <script type="text/javascript" src="src/js/components/start/start.module.js"></script>
+        <script type="text/javascript" src="src/js/views/home/home.module.js"></script>
+        <script type="text/javascript" src="src/js/views/results/results.module.js"></script>
+
+        <script type="text/javascript" src="src/js/components/ajax/ajax.model.js"></script>
+        <script type="text/javascript" src="src/js/components/answers/answers.repository.js"></script>
+        <script type="text/javascript" src="src/js/components/answers/answers.constant.js"></script>
+        <script type="text/javascript" src="src/js/components/answers/answers.model.js"></script>
+
+        <script type="text/javascript" src="src/js/components/questions/question-state.model.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/question-adapter.model.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/question-api.model.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/question.controller.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/question.states.js"></script>
+        <script type="text/javascript" src="src/js/components/questions/questions.repository.js"></script>
+
+        <script type="text/javascript" src="src/js/components/start/start.run.js"></script>
+        <script type="text/javascript" src="src/js/components/start/start.model.js"></script>
+
+        <script type="text/javascript" src="src/js/views/home/home.controller.js"></script>
+        <script type="text/javascript" src="src/js/views/home/home.state.js"></script>
+
+        <script type="text/javascript" src="src/js/views/results/results.controller.js"></script>
+        <script type="text/javascript" src="src/js/views/results/results.state.js"></script>
+
+
+
+        <script type="text/javascript">
+            angular.module("disc", ["disc.components.questions", "disc.views.home", "disc.components.start", "disc.templates"]);
+            function config($urlRouterProvider){
+                $urlRouterProvider.when("", "/");
+            }
+            angular.module("disc").config(config);
+            config.$inject = ["$urlRouterProvider"];
+            function DiscController(StartModel){
+                var vc = this;
+                vc.start = StartModel;
+            }
+            angular.module("disc").controller("DiscController", DiscController);
+            DiscController.$inject = ["StartModel"];
+        </script>
+
         <title>Teste DISC</title>
     </head>
     <body data-ng-controller="DiscController as vc">

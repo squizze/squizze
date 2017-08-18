@@ -1,3 +1,7 @@
+angular.module("disc.components.answers").factory("AnswersModel", AnswersModel);
+
+AnswersModel.$inject = ["AnswersRepository"];
+
 function AnswersModel(AnswersRepository){
 
     var _answers = {};
@@ -48,4 +52,3 @@ function AnswersModel(AnswersRepository){
 
     return model;
 }
-module.exports = AnswersModel;

@@ -11,4 +11,5 @@ function ResultsConfig($stateProvider){
     $stateProvider.state("resultScreen", resultScreenState);
 }
 
-module.exports = ResultsConfig;
+angular.module("disc.views.results").config(ResultsConfig);
+ResultsConfig.$inject = ["$stateProvider"];

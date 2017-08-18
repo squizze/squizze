@@ -1,3 +1,5 @@
+angular.module("disc.components.answers").constant("ANSWERS_CONSTANT", AnswersConstant);
+
 var AnswersConstant = {
     "A": {
         shortAlias: "D",
@@ -16,5 +18,3 @@ var AnswersConstant = {
         longAlias: "Compliance"
     }
 };
-
-module.exports = AnswersConstant;

@@ -1,3 +1,7 @@
+angular.module("disc.components.answers").factory("AnswersRepository", AnswersRepository);
+
+AnswersRepository.$inject = ["$cacheFactory", "QuestionsApi", "$q"];
+
 function AnswersRepository($cacheFactory, QuestionsApi, $q){
 
     var _answers = {};
@@ -44,4 +48,3 @@ function AnswersRepository($cacheFactory, QuestionsApi, $q){
         getAllResults: getAllResults
     };
 }
-module.exports = AnswersRepository;

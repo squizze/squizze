@@ -6,5 +6,5 @@ function StartRun(AnswersRepository, QuestionsRepository, $q, StartModel){
         StartModel.isLoading = false;
     });
 }
-
-module.exports = StartRun;
+StartRun.$inject = ["AnswersRepository", "QuestionsRepository", "$q", "StartModel"];
+angular.module("disc.components.start").run(StartRun);

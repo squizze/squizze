@@ -9,4 +9,5 @@ function QuestionsApi(Ajax){
 }
 
 
-module.exports = QuestionsApi;
+QuestionsApi.$inject = ["Ajax"];
+angular.module("disc.components.questions").factory("QuestionsApi", QuestionsApi);

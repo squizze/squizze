@@ -1,2 +1,2 @@
 function HomeController(){}
-module.exports = HomeController;
+angular.module("disc.views.home").controller("HomeController", HomeController);

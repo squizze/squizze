@@ -48,5 +48,5 @@ function QuestionsRepository(QuestionsApi, $q, $cacheFactory, QuestionAdapter){
     };
 
 }
-
-module.exports = QuestionsRepository;
+QuestionsRepository.$inject = ["QuestionsApi", "$q", "$cacheFactory", "QuestionAdapter"];
+angular.module("disc.components.questions").factory("QuestionsRepository", QuestionsRepository);

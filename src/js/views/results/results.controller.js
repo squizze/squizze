@@ -3,4 +3,5 @@ function ResultsStateController(AnswersModel){
     vc.answers = AnswersModel.getResults();
 }
 
-module.exports = ResultsStateController;
+angular.module("disc.views.results").controller("ResultsStateController", ResultsStateController);
+ResultsStateController.$inject = ["AnswersModel"];

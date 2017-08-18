@@ -8,5 +8,5 @@ function QuestionsConfig($stateProvider){
 
     $stateProvider.state("question", questionState);
 }
-
-module.exports = QuestionsConfig;
+angular.module("disc.components.questions").config(QuestionsConfig);
+QuestionsConfig.$inject = ["$stateProvider"];
