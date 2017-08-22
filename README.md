@@ -65,7 +65,7 @@ Durante esse processo acabei percebendo que um projeto pequeno como esse serve d
 | Criar uma **progressive web app** a partir desse projeto | alta| 
 | Aplicar **i18n** ao projeto | média |
 | Aplicar design inspirado no **material design**  | média  |
-| Utilizar **recursos do ES6** | média |
+| [Utilizar **recursos do ES6**](https://vivadecora.atlassian.net/browse/VDD-822) | média |
 | Adicionar **arquivos de map** ao cdigo final | média| 
 | Transformar o código em um **pacote genérico** distribuído via npm | média |
 | [Utilizar **npm scripts** como gerenciador de tarefas](https://github.com/teles/DISC/projects/2)  | baixa  |
