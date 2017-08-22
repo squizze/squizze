@@ -11,4 +11,4 @@ function ResultsConfig($stateProvider){
     $stateProvider.state("resultScreen", resultScreenState);
 }
 
-module.exports = ResultsConfig;
+export default ResultsConfig;

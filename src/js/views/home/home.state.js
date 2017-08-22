@@ -9,4 +9,4 @@ function HomeConfig($stateProvider){
     $stateProvider.state("home", homeState);
 }
 
-module.exports = HomeConfig;
+export default HomeConfig;

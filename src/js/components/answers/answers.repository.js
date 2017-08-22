@@ -44,4 +44,5 @@ function AnswersRepository($cacheFactory, QuestionsApi, $q){
         getAllResults: getAllResults
     };
 }
-module.exports = AnswersRepository;
+
+export default AnswersRepository;

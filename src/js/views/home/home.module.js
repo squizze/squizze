@@ -1,13 +1,9 @@
-(function(){
+"use strict";
+import HomeController from "./home.controller";
+import HomeConfig from "./home.state";
 
-    "use strict";
-    var HomeController = require("./home.controller");
-    var HomeConfig = require("./home.state");
+HomeConfig.$inject = ["$stateProvider"];
 
-    HomeConfig.$inject = ["$stateProvider"];
-
-    angular.module("disc.views.home", ["ui.router"]);
-    angular.module("disc.views.home").config(HomeConfig);
-    angular.module("disc.views.home").controller("HomeController", HomeController);
-
-}());
+angular.module("disc.views.home", ["ui.router"]);
+angular.module("disc.views.home").config(HomeConfig);
+angular.module("disc.views.home").controller("HomeController", HomeController);

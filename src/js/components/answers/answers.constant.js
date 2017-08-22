@@ -17,4 +17,4 @@ var AnswersConstant = {
     }
 };
 
-module.exports = AnswersConstant;
+export default AnswersConstant;

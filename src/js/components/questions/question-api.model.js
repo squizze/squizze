@@ -9,4 +9,4 @@ function QuestionsApi(Ajax){
 }
 
 
-module.exports = QuestionsApi;
+export default QuestionsApi;

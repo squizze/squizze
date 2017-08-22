@@ -1,16 +1,12 @@
-(function(){
+"use strict";
 
-    "use strict";
+import DiscConfig from "./disc.config";
+import DiscController from "./disc.controller";
+DiscController.$inject = ["StartModel"];
 
-    var config = require("./disc.config");
-    var DiscController = require("./disc.controller");
-    DiscController.$inject = ["StartModel"];
-
-    angular.module("disc", ["disc.components.questions", "disc.views.home", "disc.components.start", "disc.templates"]);
-    angular.module("disc").config(config);
-    angular.module("disc").controller("DiscController", DiscController);
-
-}());
+angular.module("disc", ["disc.components.questions", "disc.views.home", "disc.components.start", "disc.templates"]);
+angular.module("disc").config(DiscConfig);
+angular.module("disc").controller("DiscController", DiscController);
 
 
 

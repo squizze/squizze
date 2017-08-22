@@ -1,5 +1,5 @@
-function config($urlRouterProvider){
+function DiscConfig($urlRouterProvider){
     $urlRouterProvider.when("", "/");
 }
 
-module.exports = config;
+export default DiscConfig;

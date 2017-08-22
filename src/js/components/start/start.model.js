@@ -5,4 +5,4 @@ function StartModel(){
     return model;
 }
 
-module.exports = StartModel;
+export default StartModel;

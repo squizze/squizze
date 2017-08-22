@@ -1,12 +1,9 @@
-(function(){
+"use strict";
 
-    "use strict";
-    var angular = require("angular");
+import Ajax from "./ajax.model";
+import angular from "angular";
 
-    var Ajax = require("./ajax.model");
-    Ajax.$inject = ["$http"];
+Ajax.$inject = ["$http"];
 
-    angular.module("ajax", []);
-    angular.module("ajax").factory("Ajax", Ajax);
-
-}());
+angular.module("ajax", []);
+angular.module("ajax").factory("Ajax", Ajax);

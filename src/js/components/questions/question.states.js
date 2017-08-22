@@ -9,4 +9,4 @@ function QuestionsConfig($stateProvider){
     $stateProvider.state("question", questionState);
 }
 
-module.exports = QuestionsConfig;
+export default QuestionsConfig;

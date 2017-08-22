@@ -48,4 +48,5 @@ function AnswersModel(AnswersRepository){
 
     return model;
 }
-module.exports = AnswersModel;
+
+export default AnswersModel;

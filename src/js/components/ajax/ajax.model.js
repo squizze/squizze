@@ -28,6 +28,6 @@ function Ajax($http){
     };
 }
 
-module.exports = Ajax;
+export default Ajax;
 
 

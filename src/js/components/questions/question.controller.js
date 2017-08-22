@@ -9,4 +9,4 @@ function QuestionController(QuestionStateModel, $state){
     });
 }
 
-module.exports =  QuestionController;
+export default QuestionController;

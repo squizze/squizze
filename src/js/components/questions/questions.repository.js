@@ -49,4 +49,4 @@ function QuestionsRepository(QuestionsApi, $q, $cacheFactory, QuestionAdapter){
 
 }
 
-module.exports = QuestionsRepository;
+export default QuestionsRepository;

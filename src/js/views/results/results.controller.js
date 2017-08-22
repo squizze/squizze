@@ -3,4 +3,4 @@ function ResultsStateController(AnswersModel){
     vc.answers = AnswersModel.getResults();
 }
 
-module.exports = ResultsStateController;
+export default ResultsStateController;

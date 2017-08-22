@@ -16,4 +16,4 @@ function QuestionAdapter(){
     return adapter;
 }
 
-module.exports = QuestionAdapter;
+export default QuestionAdapter;
