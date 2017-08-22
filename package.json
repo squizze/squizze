@@ -4,13 +4,10 @@
   "description": "Teste de perfil comportamental DISC.",
   "main": "src/js/index.js",
   "scripts": {
+    "prestart": "npm run build",
     "transpile": "babel src --out-dir transpiled",
-    "single-test": "karma start --single-run --browsers PhantomJS",
-    "test": "karma start --browsers PhantomJS",
-    "coverage": "cat coverage/lcov/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js",
-    "build": "browserify ./transpiled/js/index.js -o bundle.js",
-    "watch": "watchify ./src/js/index.js -o bundle.js",
-    "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s browserify --no-new-module -m disc.templates"
+    "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s es2015 --no-new-module -m disc.templates",
+    "build": "npm run transpile && npm run template-cache &&browserify ./transpiled/js/index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -28,10 +25,10 @@
   "bugs": {
     "url": "https://github.com/teles/DISC/issues"
   },
-  "homepage": "https://github.com/teles/DISCc#readme",
+  "homepage": "https://github.com/teles/DISC#readme",
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.3",
-    "angular": "^1.6.5"
+    "@uirouter/angularjs": "1.0.3",
+    "angular": "1.6.5"
   },
   "devDependencies": {
     "angular-mocks": "1.6.5",
@@ -46,14 +43,6 @@
     "connect": "3.6.2",
     "eslint": "4.0.0-rc.0",
     "istanbul": "0.4.5",
-    "jasmine": "2.7.0",
-    "karma": "1.7.0",
-    "karma-browserify": "5.1.1",
-    "karma-chrome-launcher": "2.2.0",
-    "karma-coverage": "1.1.1",
-    "karma-coverage-allsources": "0.0.4",
-    "karma-jasmine": "0.1.0",
-    "karma-phantomjs-launcher": "1.0.4",
     "serve-static": "1.12.3",
     "watchify": "3.9.0"
   }

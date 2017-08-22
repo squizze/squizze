@@ -1,9 +1,5 @@
-(function(){
+"use strict";
+import angular from "angular";
+angular.module("disc.templates", []);
 
-    "use strict";
-
-    angular.module("disc.templates", []);
-
-    require("./templates.run");
-
-}());
+require("./templates.run");
