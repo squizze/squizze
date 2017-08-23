@@ -5,9 +5,14 @@
   "main": "src/js/index.js",
   "scripts": {
     "prestart": "npm run build",
+    "browserify": "browserify ./transpiled/js/index.js -o bundle.js",
+    "watch": "npm run watch:transpile & npm run watch:browserify & npm run watch:template-cache",
+    "watch:template-cache": "onchange './src/js/**/*.html' -- npm run template-cache",
+    "watch:transpile": "onchange './src/js/**/*.js' -e './src/js/templates/templates.run.js' -- npm run transpile",
+    "watch:browserify": "onchange './src/js/index.js' -- npm run browserify",
     "transpile": "babel src --out-dir transpiled",
-    "template-cache": "node node_modules/angular-template-cache/bin/cmd.js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s es2015 --no-new-module -m disc.templates",
-    "build": "npm run transpile && npm run template-cache &&browserify ./transpiled/js/index.js -o bundle.js"
+    "template-cache": "nghtml2js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s es2015 --no-new-module -m disc.templates",
+    "build": "npm run transpile && npm run template-cache && npm run browserify"
   },
   "repository": {
     "type": "git",
@@ -43,6 +48,7 @@
     "connect": "3.6.2",
     "eslint": "4.0.0-rc.0",
     "istanbul": "0.4.5",
+    "onchange": "3.2.1",
     "serve-static": "1.12.3",
     "watchify": "3.9.0"
   }
