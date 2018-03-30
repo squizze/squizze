@@ -1,25 +1,25 @@
 export default {
   "results":{
-  "A": {
-    "shortName": "D",
-      "longName": "Dominance",
-      "rule": "A1 - A2"
-  },
-  "B": {
-    "shortName": "I",
-      "longName": "Influence",
-      "rule": "B1 - B2"
-  },
-  "C": {
-    "shortName": "S",
-      "longName": "Steadliness",
-      "rule": "C1 - C2"
-  },
-  "D": {
-    "shortName": "C",
-      "longName": "Compliance",
-      "rule": "D1 - D2"
-  }
+    "A": {
+      "shortName": "D",
+        "longName": "Dominance",
+        "rule": "A1 - A2"
+    },
+    "B": {
+      "shortName": "I",
+        "longName": "Influence",
+        "rule": "B1 - B2"
+    },
+    "C": {
+      "shortName": "S",
+        "longName": "Steadliness",
+        "rule": "C1 - C2"
+    },
+    "D": {
+      "shortName": "C",
+        "longName": "Compliance",
+        "rule": "D1 - D2"
+    }
   },
   "groups": {
   "A1": [3,8,19, 31],

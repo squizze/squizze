@@ -3,7 +3,7 @@ class Squizze {
     constructor(questions, answers) {
         this.questions = questions;
         this.answers = answers;
-        this.results = this.calculate(questions, answers);
+        this.calculate();
     }
 
     calculate () {
@@ -12,7 +12,7 @@ class Squizze {
 
         Object.keys(this.questions.groups).forEach((groupName) => {
             this.questions.groups[groupName].forEach((id) => {
-              sum[groupName] = typeof sum[groupName] !== "undefined" ? sum[groupName] + answers[id] : 0;
+              sum[groupName] = typeof sum[groupName] !== "undefined" ? sum[groupName] + this.answers[id] : 0;
             });
         });
 
@@ -20,6 +20,8 @@ class Squizze {
             let rule = this.questions.results[key].rule.replace(/([A-Z][0-9])/g, "sum.$1");
             results[key] = eval(rule);
         });
+
+        this.results = results;
     }
 }
 export default Squizze;
