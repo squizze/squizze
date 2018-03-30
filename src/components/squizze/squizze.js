@@ -12,7 +12,7 @@ class Squizze {
 
         Object.keys(this.questions.groups).forEach((groupName) => {
             this.questions.groups[groupName].forEach((id) => {
-              sum[groupName] = typeof sum[groupName] !== "undefined" ? sum[groupName] + this.answers[id] : 0;
+              sum[groupName] = typeof sum[groupName] !== "undefined" ? sum[groupName] + this.answers[id] : this.answers[id];
             });
         });
 

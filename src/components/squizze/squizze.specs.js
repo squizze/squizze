@@ -23,4 +23,8 @@ test("Pokemon is Squirtle", t => {
     let PokemonSquizze = new Squizze(PokemonQuestions, PokemonSquirtle);
     t.truthy(PokemonSquizze);
     t.is(PokemonSquizze.results.S, 5);
+    t.is(PokemonSquizze.results.B, 0);
+    t.is(PokemonSquizze.results.C, 0);
+    t.is(Math.max.apply(Math, Object.values(PokemonSquizze.results)), PokemonSquizze.results.S);
+
 });
