@@ -1,17 +1,14 @@
 export default {
-    "results":{
+    "summary":{
         "S": {
-          "shortName": "S",
           "longName": "Squirtle",
           "rule": "S1 - S2"
         },
         "B": {
-          "shortName": "B",
           "longName": "Bulbasaur",
           "rule": "B1 - B2"
         },
         "C": {
-          "shortName": "C",
           "longName": "Charmander",
           "rule": "C1 - C2"
         }

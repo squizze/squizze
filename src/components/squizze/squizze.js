@@ -16,8 +16,8 @@ class Squizze {
             });
         });
 
-        Object.keys(this.questions.results).forEach(key => {
-            let rule = this.questions.results[key].rule.replace(/([A-Z][0-9])/g, "sum.$1");
+        Object.keys(this.questions.summary).forEach(key => {
+            let rule = this.questions.summary[key].rule.replace(/([A-Z][0-9])/g, "sum.$1");
             results[key] = eval(rule);
         });
 

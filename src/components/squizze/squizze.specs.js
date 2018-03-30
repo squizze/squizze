@@ -12,11 +12,12 @@ test("Squizze is defined", t => {
 test("DISC results are correct", t => {
     let DISCSquizze = new Squizze(DISCQuestions, DISCAnswers);
     t.truthy(DISCSquizze);
-    DISCSquizze.calculate();
-    t.is(DISCSquizze.results.A, 0);
-    t.is(DISCSquizze.results.B, 0);
-    t.is(DISCSquizze.results.C, 2);
-    t.is(DISCSquizze.results.D, -2);
+    t.is(DISCSquizze.results.D, 0);
+    t.is(DISCSquizze.results.I, 0);
+    t.is(DISCSquizze.results.S, 2);
+    t.is(DISCSquizze.results.C, -2);
+    t.is(Math.max.apply(Math, Object.values(DISCSquizze.results)), DISCSquizze.results.S);
+    t.is(Math.min.apply(Math, Object.values(DISCSquizze.results)), DISCSquizze.results.C);
 });
 
 test("Pokemon is Squirtle", t => {
@@ -26,5 +27,4 @@ test("Pokemon is Squirtle", t => {
     t.is(PokemonSquizze.results.B, 0);
     t.is(PokemonSquizze.results.C, 0);
     t.is(Math.max.apply(Math, Object.values(PokemonSquizze.results)), PokemonSquizze.results.S);
-
 });
