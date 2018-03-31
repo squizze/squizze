@@ -21,23 +21,12 @@ export default {
       "C1": [6],
       "C2": [5],
     },
-    "questions": [{
-        "id": 1,
-        "text": "Nao gosto de pokemons de agua"
-    }, {
-        "id": 2,
-        "text": "Gosto de pokemons de agua"
-    }, {
-        "id": 3,
-        "text": "Nao gosto de pokemons de grama"
-    }, {
-      "id": 4,
-      "text": "Gosto de pokemons de grama"
-    }, {
-      "id": 5,
-      "text": "Nao gosto de pokemons de fogo"
-    }, {
-      "id": 6,
-      "text": "Gosto de pokemons de fogo"
-    }]
+    "questions": {
+        "1": {"content": "Nao gosto de pokemons de agua"},
+        "2": {"content": "Gosto de pokemons de agua"},
+        "3": {"content": "Nao gosto de pokemons de grama"},
+        "4": {"content": "Gosto de pokemons de grama"},
+        "5": {"content": "Nao gosto de pokemons de fogo"},
+        "6": {"content": "Gosto de pokemons de fogo"},
+    }
 };

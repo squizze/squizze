@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    {{ squizze.results }}
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,7 +13,6 @@
       name: 'app',
       data () {
         return {
-          msg: 'Welcome to Your Vue.js App',
           squizze: new Squizze(PokemonQuestions, PokemonAnswers)
         }
       }
@@ -21,7 +20,7 @@
 </script>
 
 <style lang="scss">
-#app {
+body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
