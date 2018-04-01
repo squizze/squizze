@@ -6,14 +6,14 @@
 
 <script>
     import Squizze from "./components/squizze/squizze";
-    import PokemonQuestions from "./components/squizze/samples/pokemon.questions";
+    import PokemonQuiz from "./components/squizze/samples/pokemon.quiz";
     import PokemonAnswers from "./components/squizze/samples/pokemon.squirtle";
 
     export default {
       name: 'app',
       data () {
         return {
-          squizze: new Squizze(PokemonQuestions, PokemonAnswers)
+          squizze: new Squizze(PokemonQuiz, PokemonAnswers)
         }
       }
     }

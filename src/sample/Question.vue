@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import PokemonQuizz from "../components/squizze/samples/pokemon.questions";
+  import PokemonQuizz from "../components/squizze/samples/pokemon.quiz";
 
   export default {
       data () {

@@ -1,8 +1,8 @@
 import test from "ava";
 import Squizze from "./squizze";
-import DISCQuestions from "./samples/DISC.questions";
+import DISCQuestions from "./samples/DISC.quiz";
 import DISCAnswers from "./samples/DISC.answers";
-import PokemonQuestions from "./samples/pokemon.questions";
+import PokemonQuestions from "./samples/pokemon.quiz";
 import PokemonSquirtle from "./samples/pokemon.squirtle";
 
 test("Squizze is defined", t => {
