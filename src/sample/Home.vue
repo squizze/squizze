@@ -1,17 +1,11 @@
 <template>
 
   <div>
-    <h1>Choose your initial Pokemon!</h1>
-    <h2> With simple questions we are going to help choose your first pokemon!</h2>
+    <h1> Descubra seu perfil DISC</h1>
+    <h2> Com algumas questões simples descobriremos seu perfil DISC!</h2>
 
-    <div>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png">
-    </div>
+    <router-link :to="{name: 'question', params: {question_id: 1}}">Começar!</router-link>
 
-    <router-link :to="{name: 'question', params: {question_id: 1}}">Start!</router-link>
-    <p> * This is a sample Quiz for Squizze </p>
   </div>
 
 </template>

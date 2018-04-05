@@ -5,6 +5,7 @@ const AnswersStore = {
     mutations: {
         addAnswer (state, answer) {
             state.answers.push(answer);
+            console.log(state.answers);
         }
     }
 };

@@ -13,6 +13,14 @@ export default {
           "rule": "C1 - C2"
         }
     },
+    "choices": [
+      {"value": 0, "content": "Não sei"},
+      {"value": 1, "content": "Discordo plenamente"},
+      {"value": 2, "content": "Discordo"},
+      {"value": 3, "content": "Concordo um pouco"},
+      {"value": 4, "content": "Concordo"},
+      {"value": 5, "content": "Concordo plenamente"},
+    ],
     "groups": {
       "S1": [2],
       "S2": [1],

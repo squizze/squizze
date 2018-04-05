@@ -27,9 +27,14 @@ export default {
       "C1": [4,17,21],
       "C2": [13,14,22,28]
   },
-  "options": {
-      "texts": ["Não sei", "Discordo totalmente", "Discordo", "Concordo um pouco", "Concordo", "Concordo totalmente"]
-  },
+  "choices": [
+    {"value": 0, "content": "Não sei"},
+    {"value": 1, "content": "Discordo plenamente"},
+    {"value": 2, "content": "Discordo"},
+    {"value": 3, "content": "Concordo um pouco"},
+    {"value": 4, "content": "Concordo"},
+    {"value": 5, "content": "Concordo plenamente"},
+  ],
   "questions":[
       {
         "id": "1",
