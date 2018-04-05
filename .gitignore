@@ -1,14 +1,12 @@
-/.idea/modules.xml
-/.idea/teste-disc.iml
-/.idea/vcs.xml
-/.idea/workspace.xml
-/.idea/misc.xml
-/node_modules/
-/coverage/
-/bundle.js
-/.idea/
-/id_rsa
-/id_rsa.pub
-/src/js/templates/templates.run.js
-/transpiled
-/npm-debug.log
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

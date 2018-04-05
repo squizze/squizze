@@ -1,55 +1,58 @@
 {
-  "name": "DISC",
-  "version": "1.0.0",
-  "description": "Teste de perfil comportamental DISC.",
-  "main": "src/js/index.js",
-  "scripts": {
-    "prestart": "npm run build",
-    "browserify": "browserify ./transpiled/js/index.js -o bundle.js",
-    "watch": "npm run watch:transpile & npm run watch:browserify & npm run watch:template-cache",
-    "watch:template-cache": "onchange './src/js/**/*.html' -- npm run template-cache",
-    "watch:transpile": "onchange './src/js/**/*.js' -e './src/js/templates/templates.run.js' -- npm run transpile",
-    "watch:browserify": "onchange './src/js/index.js' -- npm run browserify",
-    "transpile": "babel src --out-dir transpiled",
-    "template-cache": "nghtml2js -f './src/**/*.template.html' -o ./src/js/templates/templates.run.js -s es2015 --no-new-module -m disc.templates",
-    "build": "npm run transpile && npm run template-cache && npm run browserify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teles/DISC.git"
-  },
-  "keywords": [
-    "test",
-    "disc",
-    "portugues",
-    "brasil",
-    "testes"
-  ],
-  "author": "Teles <josetelesmaciel@gmail.com>",
+  "name": "squizze",
+  "description": "Quizz templates",
+  "version": "0.1.0",
+  "author": "Jota Teles <josetelesmaciel@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/teles/DISC/issues"
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "test": "ava",
+    "test-watch": "npm test -- --watch"
   },
-  "homepage": "https://github.com/teles/DISC#readme",
+  "ava": {
+    "files": [
+      "./src/**/**/*.specs.js"
+    ],
+    "source": [
+      "./src/**/*.{js}",
+      "!./src/**/*.specs.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
   "dependencies": {
-    "@uirouter/angularjs": "1.0.3",
-    "angular": "1.6.5"
+    "vue": "^2.5.16",
+    "vue-router": "3.0.1",
+    "vuex": "^3.0.1"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "devDependencies": {
-    "angular-mocks": "1.6.5",
-    "angular-template-cache": "1.2.0",
-    "babel": "6.23.0",
-    "babel-cli": "6.26.0",
-    "babel-preset-es2015": "6.24.1",
-    "browserify": "14.4.0",
-    "browserify-istanbul": "2.0.0",
-    "codacy-coverage": "2.0.2",
-    "common.js": "1.1.1",
-    "connect": "3.6.2",
-    "eslint": "4.0.0-rc.0",
-    "istanbul": "0.4.5",
-    "onchange": "3.2.1",
-    "serve-static": "1.12.3",
-    "watchify": "3.9.0"
+    "ava": "0.25.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-stage-3": "6.24.1",
+    "cross-env": "5.0.5",
+    "css-loader": "0.28.7",
+    "file-loader": "1.1.4",
+    "node-sass": "4.5.3",
+    "sass-loader": "6.0.6",
+    "vue-loader": "13.0.5",
+    "vue-template-compiler": "2.5.16",
+    "webpack": "3.6.0",
+    "webpack-dev-server": "2.9.1"
   }
 }
