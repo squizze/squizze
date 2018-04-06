@@ -138,7 +138,7 @@ export default {
       },
       {
         "id": "26",
-        "content": "Recebo em as normas e procedimentos. Respeito as regras."
+        "content": "Recebo bem as normas e procedimentos. Respeito as regras."
       },
       {
         "id": "27",
