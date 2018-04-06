@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from "vue-router/dist/vue-router.esm";
-import Question from "./sample/Question.vue";
-import Home from "./sample/Home.vue";
+import Question from "./pages/Question.vue";
+import Home from "./pages/Home.vue";
 import Vuex from "vuex/dist/vuex.esm";
-import Congratulations from "./sample/Congratulations.vue";
+import Congratulations from "./pages/Congratulations.vue";
 import AnswersStore from "./components/answers/answers-store";
 
 Vue.use(VueRouter);
