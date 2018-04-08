@@ -5,7 +5,7 @@ import Question from "./pages/Question.vue";
 import Home from "./pages/Home.vue";
 import Vuex from "vuex/dist/vuex.esm";
 import Congratulations from "./pages/Congratulations.vue";
-import AnswersStore from "./components/answers/answers-store";
+import QuizStore from "./components/quiz-store";
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -17,7 +17,7 @@ const routes = [
 ];
 
 const router = new VueRouter({routes});
-let store = new Vuex.Store(AnswersStore);
+let store = new Vuex.Store(QuizStore);
 new Vue({
   el: '#app',
   render: h => h(App),

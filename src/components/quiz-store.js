@@ -1,4 +1,4 @@
-const AnswersStore = {
+const QuizStore = {
     state: {
         answers: {}
     },
@@ -8,4 +8,4 @@ const AnswersStore = {
         }
     }
 };
-export default AnswersStore;
+export default QuizStore;
