@@ -14,6 +14,19 @@
         </tr>
       </tbody>
     </table>
+    <h2> Suas respostas </h2>
+    <table style="text-align: left">
+      <thead>
+      <td><strong>Pergunta</strong></td>
+      <td><strong>Resposta</strong></td>
+      </thead>
+      <tbody>
+      <tr v-for="question in questions">
+        <td>{{ question.content }}</td>
+        <td>{{ question.answer.content }}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 
 </template>
@@ -28,9 +41,14 @@
       }
     },
     computed: {
-        results() {
-          const results = new Squizze(DISCQuiz, this.$store.state.get_values()).results;
-          return Object.values(results).sort((resultA, resultB) => resultA.sum < resultB.sum);
+        squizze() {
+            return new Squizze(DISCQuiz, this.$store.state.get_values());
+        },
+        results () {
+            return Object.values(this.squizze.results).sort((resultA, resultB) => resultA.sum < resultB.sum);
+        },
+        questions () {
+            return Object.values(this.$store.state.questions);
         }
     }
   }
