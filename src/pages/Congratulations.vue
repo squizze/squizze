@@ -29,7 +29,7 @@
     },
     computed: {
         results() {
-          const results = new Squizze(DISCQuiz, this.$store.state.answers).results;
+          const results = new Squizze(DISCQuiz, this.$store.state.get_values()).results;
           return Object.values(results).sort((resultA, resultB) => resultA.sum < resultB.sum);
         }
     }

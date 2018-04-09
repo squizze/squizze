@@ -6,11 +6,15 @@
 
 <script>
     import Squizze from "./components/squizze/squizze";
+    import DISCQuiz from "./components/squizze/samples/DISC.quiz";
 
     export default {
       name: 'app',
       data () {
         return {}
+      },
+      created: function created () {
+          this.$store.commit("init", DISCQuiz);
       }
     }
 </script>
