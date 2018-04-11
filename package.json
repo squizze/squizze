@@ -14,7 +14,8 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "prep": ["build"]
+    "prep": ["build"],
+    "noprompt": true
   },
   "ava": {
     "files": [
