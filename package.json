@@ -9,7 +9,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "ava",
-    "test-watch": "npm test -- --watch"
+    "test-watch": "npm test -- --watch",
+    "deploy": "gh-pages-deploy -- '#31 - updates gh-pages.' "
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": ["build"]
   },
   "ava": {
     "files": [
@@ -48,6 +53,7 @@
     "cross-env": "5.0.5",
     "css-loader": "0.28.7",
     "file-loader": "1.1.4",
+    "gh-pages-deploy": "0.5.0",
     "node-sass": "4.5.3",
     "sass-loader": "6.0.6",
     "vue-loader": "13.0.5",
