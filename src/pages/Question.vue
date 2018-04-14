@@ -32,7 +32,7 @@
               let question = this.DISCQuiz.questions.filter(item => parseInt(item.id) === parseInt(question_id))[0];
               let answer = this.DISCQuiz.choices.filter(item => parseInt(item.value) === parseInt(choice_value))[0];
               let is_this_the_last_question = parseInt(this.DISCQuiz.questions[this.DISCQuiz.questions.length -1].id) === parseInt(question_id);
-              let next_route = is_this_the_last_question ? {name: "congratulations"} : { name: "question", params: { question_id: parseInt(question_id) + 1 }};
+              let next_route = is_this_the_last_question ? {name: "results"} : { name: "question", params: { question_id: parseInt(question_id) + 1 }};
 
               this.$store.commit("answer", {
                   id: question.id,
