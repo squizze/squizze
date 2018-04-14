@@ -13,6 +13,7 @@ const QuizStore = {
         init (state, quiz) {
             quiz.questions.forEach(question => {
                 state.questions[question.id] = {
+                    id: question.id,
                     content: question.content,
                     is_answered: false,
                     answer: {
@@ -24,6 +25,7 @@ const QuizStore = {
         },
         answer (state, question) {
             state.questions[question.id] = {
+                id: question.id,
                 content: question.content,
                 is_answered: true,
                 answer: {

@@ -1,8 +1,11 @@
 <template>
   <div>
+    <progress v-bind:value="Object.values(this.$store.state.questions).filter(question => question.is_answered === true).length" :max="Object.values(questions).length"></progress>
+
     <div>
       <h1>{{ DISCQuiz.questions[this.$route.params.question_id - 1].content }}</h1>
     </div>
+
     <div>
         <button
             v-for="choice in DISCQuiz.choices"
@@ -15,10 +18,12 @@
 </template>
 <script>
   import DISCQuiz from "../components/squizze/samples/DISC.quiz";
+  import ProgressBar from "../components/progress-bar/ProgressBar.vue";
 
   export default {
       data () {
           return {
+              questions: this.$store.state.questions,
               DISCQuiz
           }
       },
