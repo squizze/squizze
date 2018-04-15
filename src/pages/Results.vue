@@ -1,9 +1,6 @@
 <template>
-
   <div>
-
     <h1>Sua característica principal é <span style="color: red;">{{ results[0].longName }}.</span></h1>
-
     <table>
       <thead>
         <td>Característica</td>
@@ -18,10 +15,10 @@
     </table>
     <br>
     <div v-if="is_quiz_done">
-      <p v-on:click="toggle_answers_table" style="text-decoration: underline; cursor: pointer;">
+      <p v-on:click="toggle_answers_table">
         {{ answers_table_is_open ? "Esconder minhas respostas" : "Exibir minhas respostas" }}
       </p>
-      <router-link :to="{name: 'question', params: {question_id: 1}}">Refazer teste!</router-link>
+      <p v-on:click="restart_quiz()">Refazer o teste.</p>
       <div v-show="answers_table_is_open">
         <h2> Suas respostas </h2>
         <table style="text-align: left">
@@ -37,10 +34,9 @@
           </tbody>
         </table>
       </div>
-
     </div>
     <div v-else>
-      <router-link :to="{name: 'question', params: {question_id: 1}}">Fazer o teste!</router-link>
+      <router-link :to="{name: 'question', params: {question_id: 1}}">Faça o teste.</router-link>
     </div>
   </div>
 </template>
@@ -57,6 +53,10 @@
       }
     },
     methods: {
+        restart_quiz() {
+            this.$store.commit("init", DISCQuiz);
+            this.$router.push({name: "question", params: {question_id: 1}});
+        },
         toggle_answers_table() {
             this.answers_table_is_open = !this.answers_table_is_open;
         },
@@ -94,5 +94,9 @@
     }
     table td {
         border: 1px solid #000;
+    }
+    p {
+      text-decoration: underline;
+      cursor: pointer;
     }
 </style>
