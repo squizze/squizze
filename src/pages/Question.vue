@@ -1,7 +1,6 @@
 <template>
   <div>
-    <progress v-bind:value="Object.values(this.$store.state.questions).filter(question => question.is_answered === true).length" :max="Object.values(questions).length"></progress>
-
+    <progress-bar :questions="Object.values(this.$store.state.questions)"></progress-bar>
     <div>
       <h1>{{ DISCQuiz.questions[this.$route.params.question_id - 1].content }}</h1>
     </div>
@@ -23,9 +22,11 @@
   export default {
       data () {
           return {
-              questions: this.$store.state.questions,
               DISCQuiz
           }
+      },
+      components: {
+          "progress-bar": ProgressBar
       },
       methods: {
           answer (question_id, choice_value) {

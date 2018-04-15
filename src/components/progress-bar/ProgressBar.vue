@@ -1,18 +1,13 @@
 <template>
     <div>
-        <span v-for="question in questions">
-            {{ question.is_answered }}
-        </span>
-
+      <progress v-bind:value="questions.filter(question => question.is_answered).length" :max="questions.length"></progress>
     </div>
 </template>
 <script>
   export default {
       data() {
-          return {
-              questions: this.$store.state.questions
-          }
+          return {}
       },
-      computed: {}
+      props: ["questions"]
   }
 </script>
