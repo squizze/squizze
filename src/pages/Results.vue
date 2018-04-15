@@ -64,7 +64,7 @@
                   result.sum = query_results[key];
                   return result;
               })
-              .sort((a, b) => a.sum < b.sum);
+              .sort((a, b) => parseInt(a.sum) < parseInt(b.sum));
         },
         questions () {
             return Object.values(this.$store.state.questions);
