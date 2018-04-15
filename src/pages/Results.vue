@@ -16,23 +16,33 @@
         </tr>
       </tbody>
     </table>
+    <br>
     <div v-if="is_quiz_done">
-      <h2> Suas respostas </h2>
-      <table style="text-align: left">
-        <thead>
-        <td><strong>Pergunta</strong></td>
-        <td><strong>Resposta</strong></td>
-        </thead>
-        <tbody>
-        <tr v-for="question in questions">
-          <td>{{ question.content }}</td>
-          <td>{{ question.answer.content }}</td>
-        </tr>
-        </tbody>
-      </table>
+      <p v-on:click="toggle_answers_table" style="text-decoration: underline; cursor: pointer;">
+        {{ answers_table_is_open ? "Esconder minhas respostas" : "Exibir minhas respostas" }}
+      </p>
+      <router-link :to="{name: 'question', params: {question_id: 1}}">Refazer teste!</router-link>
+      <div v-show="answers_table_is_open">
+        <h2> Suas respostas </h2>
+        <table style="text-align: left">
+          <thead>
+          <td><strong>Pergunta</strong></td>
+          <td><strong>Resposta</strong></td>
+          </thead>
+          <tbody>
+          <tr v-for="question in questions">
+            <td>{{ question.content }}</td>
+            <td>{{ question.answer.content }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div v-else>
+      <router-link :to="{name: 'question', params: {question_id: 1}}">Fazer o teste!</router-link>
     </div>
   </div>
-
 </template>
 <script>
 
@@ -42,15 +52,19 @@
   export default {
     data () {
       return {
-          is_quiz_done: true
+          is_quiz_done: true,
+          answers_table_is_open: false
       }
     },
     methods: {
-      verify_quiz_sum(squizze_results, query_results) {
-        return Object.keys(squizze_results).every(function (key) {
-          return squizze_results[key].sum === query_results[key];
-        });
-      }
+        toggle_answers_table() {
+            this.answers_table_is_open = !this.answers_table_is_open;
+        },
+        verify_quiz_sum(squizze_results, query_results) {
+            return Object.keys(squizze_results).every(function (key) {
+              return squizze_results[key].sum === query_results[key];
+            });
+        }
     },
     computed: {
         results () {
