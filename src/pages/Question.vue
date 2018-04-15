@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+  import Squizze from "../components/squizze/squizze";
   import DISCQuiz from "../components/squizze/samples/DISC.quiz";
   import ProgressBar from "../components/progress-bar/ProgressBar.vue";
 
@@ -29,11 +30,22 @@
           "progress-bar": ProgressBar
       },
       methods: {
+          go_to_next_question(question_id) {
+              this.$router.push({ name: "question", params: { question_id: parseInt(question_id) + 1}});
+          },
+          go_to_results() {
+              this.$router.push({name: "results", query: this.calculate_sum()});
+          },
+          calculate_sum() {
+              let results = new Squizze(DISCQuiz, this.$store.state.get_values()).results;
+              return Object.keys(results).reduce(function(previous, current) {
+                  previous[current] = results[current].sum;
+                  return previous;
+              }, {});
+          },
           answer (question_id, choice_value) {
               let question = this.DISCQuiz.questions.filter(item => parseInt(item.id) === parseInt(question_id))[0];
               let answer = this.DISCQuiz.choices.filter(item => parseInt(item.value) === parseInt(choice_value))[0];
-              let is_this_the_last_question = parseInt(this.DISCQuiz.questions[this.DISCQuiz.questions.length -1].id) === parseInt(question_id);
-              let next_route = is_this_the_last_question ? {name: "results"} : { name: "question", params: { question_id: parseInt(question_id) + 1 }};
 
               this.$store.commit("answer", {
                   id: question.id,
@@ -44,8 +56,8 @@
                       value: answer.value
                   }
               });
-
-              this.$router.push(next_route);
+              let is_this_the_last_question = parseInt(this.DISCQuiz.questions[this.DISCQuiz.questions.length -1].id) === parseInt(question_id);
+              is_this_the_last_question ? this.go_to_results() : this.go_to_next_question(parseInt(question.id));
           }
       }
   }
