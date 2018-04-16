@@ -9,6 +9,68 @@ test("Squizze is defined", t => {
     t.truthy(Squizze);
 });
 
+test("All negative result for DISC.", t => {
+  let girlfriend_answers = {
+      1: "concordo",
+      2: "concordo um pouco",
+      3: "discordo",
+      4: "nao sei",
+      5: "discordo",
+      6: "discordo",
+      7: "discordo",
+      8: "discordo",
+      9: "concordo um pouco",
+      10: "nao sei",
+      11: "nao sei",
+      12: "discordo",
+      13: "concordo plenamente",
+      14: "concordo plenamente",
+      15: "concordo",
+      16: "nao sei",
+      17: "nao sei",
+      18: "nao sei",
+      19: "concordo",
+      20: "nao sei",
+      21: "nao sei",
+      22: "concordo",
+      23: "concordo um pouco",
+      24: "discordo",
+      25: "nao sei",
+      26: "concordo",
+      27: "concordo",
+      28: "discordo",
+      29: "nao sei",
+      30: "concordo",
+      31: "nao sei",
+      32: "discordo"
+  };
+  let answer_to_number = {
+    "nao sei": 0,
+    "discordo plenamente": 1,
+    "discordo": 2,
+    "concordo um pouco": 3,
+    "concordo": 4,
+    "concordo plenamente": 5
+  };
+
+  for(let key in girlfriend_answers){
+    if(girlfriend_answers.hasOwnProperty(key)){
+      girlfriend_answers[key] = answer_to_number[girlfriend_answers[key]];
+    }
+  }
+
+  let expected_results = {
+    S: -1,
+    D: -2,
+    C: -6,
+    I: -8
+  };
+
+  let AllNegativeDISCSquizze =  new Squizze(DISCQuestions, girlfriend_answers);
+      t.is(Object.values(AllNegativeDISCSquizze.results).every(result => {
+          return Math.sign(result.sum) === -1;
+      }), true);
+});
 test("DISC results are correct", t => {
     let DISCSquizze = new Squizze(DISCQuestions, DISCAnswers);
     t.truthy(DISCSquizze);
