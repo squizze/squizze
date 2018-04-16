@@ -21,22 +21,22 @@ test("All negative result for DISC.", t => {
       8: "discordo",
       9: "concordo um pouco",
       10: "nao sei",
-      11: "nao sei",
-      12: "discordo",
+      11: "discordo",
+      12: "concordo plenamente",
       13: "concordo plenamente",
-      14: "concordo plenamente",
-      15: "concordo",
+      14: "concordo",
+      15: "nao sei",
       16: "nao sei",
-      17: "nao sei",
+      17: "concordo",
       18: "nao sei",
-      19: "concordo",
-      20: "nao sei",
-      21: "nao sei",
-      22: "concordo",
-      23: "concordo um pouco",
-      24: "discordo",
-      25: "nao sei",
-      26: "concordo",
+      19: "nao sei",
+      20: "concordo",
+      21: "concordo um pouco",
+      22: "discordo",
+      23: "nao sei",
+      24: "concordo",
+      25: "concordo",
+      26: "nao sei",
       27: "concordo",
       28: "discordo",
       29: "nao sei",
@@ -60,17 +60,22 @@ test("All negative result for DISC.", t => {
   }
 
   let expected_results = {
-    S: -1,
     D: -2,
-    C: -6,
-    I: -8
+    I: -8,
+    S: -1,
+    C: -6
   };
 
   let AllNegativeDISCSquizze =  new Squizze(DISCQuestions, girlfriend_answers);
-      t.is(Object.values(AllNegativeDISCSquizze.results).every(result => {
-          return Math.sign(result.sum) === -1;
-      }), true);
+  t.is(Object.values(AllNegativeDISCSquizze.results).every(result => {
+      return Math.sign(result.sum) === -1;
+  }), true);
+  t.is(AllNegativeDISCSquizze.results.D.sum, expected_results.D);
+  t.is(AllNegativeDISCSquizze.results.I.sum, expected_results.I);
+  t.is(AllNegativeDISCSquizze.results.S.sum, expected_results.S);
+  t.is(AllNegativeDISCSquizze.results.C.sum, expected_results.C);
 });
+
 test("DISC results are correct", t => {
     let DISCSquizze = new Squizze(DISCQuestions, DISCAnswers);
     t.truthy(DISCSquizze);
