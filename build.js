@@ -218,7 +218,6 @@ var Squizze = function () {
 
         this.quiz = quiz;
         this.answers = answers;
-        this.calculate();
 
         var schema_validator = new _djv2.default({ version: 'draft-06' });
         schema_validator.addSchema("quiz", _quiz2.default);
@@ -226,6 +225,8 @@ var Squizze = function () {
 
         if (typeof validation_result !== "undefined") {
             throw " Invalid Quiz. " + validation_result;
+        } else {
+            this.calculate();
         }
     }
 
