@@ -1,4 +1,5 @@
-// import djv from "djv/djv";
+import Djv from "djv/djv";
+import QuizSchema from "./quiz.schema";
 
 class Squizze {
 
@@ -6,6 +7,15 @@ class Squizze {
         this.quiz = quiz;
         this.answers = answers;
         this.calculate();
+
+        const schema_validator = new Djv({ version: 'draft-06' });
+        schema_validator.addSchema("quiz", QuizSchema);
+        let validation_result = schema_validator.validate("quiz", quiz);
+
+        if(typeof validation_result !== "undefined") {
+            throw ` Invalid Quiz. ${validation_result}`;
+        }
+
     }
 
     calculate () {

@@ -1,21 +1,55 @@
 {
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Quiz",
   "type": "object",
   "properties": {
+    "groups": {
+      "type": "object",
+      "description": "Groups of questions ids separated by type"
+    },
     "questions": {
       "description": "List of questions with id and content",
       "type": "array",
-      "minimum": 1
+      "items": {
+          "id": {
+              "type": "string"
+          },
+          "content": {
+              "type": "string"
+          },
+          "required": ["id", "content"]
+      },
+      "uniqueItems": true,
+      "minItems": 1
     },
     "summary": {
       "description": "List of possible quiz result groups",
-      "type": "object"
+      "type": "object",
+      "properties": {
+          "longName": {
+              "type": "string"
+          },
+          "rule": {
+              "type": "string"
+          },
+          "required": ["rule", "longName"]
+      }
     },
     "choices": {
       "description": "Optional list of possible question choices",
       "type": "array",
-      "minimum": 1
+      "minItems": 1,
+      "items": {
+          "value": {
+              "type": "integer"
+          },
+          "content": {
+              "type": "string"
+          },
+          "required": ["value", "content"]
+      },
+      "uniqueItems": true
     }
   },
-  "required": ["summary", "questions", "choices"]
+  "required": ["summary", "questions"]
 }
