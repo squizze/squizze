@@ -2,25 +2,25 @@
 
 class Squizze {
 
-    constructor(questions, answers) {
-        this.questions = questions;
+    constructor(quiz, answers) {
+        this.quiz = quiz;
         this.answers = answers;
         this.calculate();
     }
 
     calculate () {
         let sum = {};
-        let results = Object.assign({}, this.questions.summary);
+        let results = Object.assign({}, this.quiz.summary);
 
-        Object.keys(this.questions.groups).forEach(groupName => {
-            this.questions.groups[groupName].forEach((id) => {
+        Object.keys(this.quiz.groups).forEach(groupName => {
+            this.quiz.groups[groupName].forEach((id) => {
               sum[groupName] = typeof sum[groupName] !== "undefined" ? sum[groupName] + this.answers[id] : this.answers[id];
             });
         });
 
-        Object.keys(this.questions.summary).forEach(key => {
-            let rule = this.questions.summary[key].rule.replace(/([A-Z][0-9])/g, "sum.$1");
-            results[key] = this.questions.summary[key];
+        Object.keys(this.quiz.summary).forEach(key => {
+            let rule = this.quiz.summary[key].rule.replace(/([A-Z][0-9])/g, "sum.$1");
+            results[key] = this.quiz.summary[key];
             results[key].sum = eval(rule);
         });
         this.results = results;
