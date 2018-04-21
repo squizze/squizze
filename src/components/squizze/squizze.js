@@ -6,7 +6,6 @@ class Squizze {
     constructor(quiz, answers) {
         this.quiz = quiz;
         this.answers = answers;
-        this.calculate();
 
         const schema_validator = new Djv({ version: 'draft-06' });
         schema_validator.addSchema("quiz", QuizSchema);
@@ -14,7 +13,10 @@ class Squizze {
 
         if(typeof validation_result !== "undefined") {
             throw ` Invalid Quiz. ${validation_result}`;
+        } else {
+            this.calculate();
         }
+
 
     }
 
