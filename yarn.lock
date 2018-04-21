@@ -44,6 +44,10 @@
   dependencies:
     arrify "^1.0.1"
 
+"@korzio/djv-draft-04@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@korzio/djv-draft-04/-/djv-draft-04-2.0.0.tgz#9b459a6c72b2a9c50bf4ef1d249bdb58dd840566"
+
 "@ladjs/time-require@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@ladjs/time-require/-/time-require-0.1.4.tgz#5c615d75fd647ddd5de9cf6922649558856b21a1"
@@ -2042,6 +2046,12 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+djv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/djv/-/djv-2.0.0.tgz#0918ca5830a7e666f13a1977764ddf1cc2998254"
+  optionalDependencies:
+    "@korzio/djv-draft-04" "^2.0.0"
+
 dns-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dns-equal/-/dns-equal-1.0.0.tgz#b39e7f1da6eb0a75ba9c17324b34753c47e0654d"
@@ -3021,7 +3031,7 @@ html-minifier@^3.2.3:
     relateurl "0.2.x"
     uglify-js "3.3.x"
 
-html-webpack-plugin@^3.2.0:
+html-webpack-plugin@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
   dependencies:

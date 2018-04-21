@@ -1,0 +1,21 @@
+{
+  "title": "Quiz",
+  "type": "object",
+  "properties": {
+    "questions": {
+      "description": "List of questions with id and content",
+      "type": "array",
+      "minimum": 1
+    },
+    "summary": {
+      "description": "List of possible quiz result groups",
+      "type": "object"
+    },
+    "choices": {
+      "description": "Optional list of possible question choices",
+      "type": "array",
+      "minimum": 1
+    }
+  },
+  "required": ["summary", "questions", "choices"]
+}

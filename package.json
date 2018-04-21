@@ -1,6 +1,6 @@
 {
   "name": "squizze",
-  "description": "Quizz templates",
+  "description": "Quizz generator for Single Page Apps",
   "version": "0.1.0",
   "author": "Jota Teles <josetelesmaciel@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,9 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "prep": ["build"],
+    "prep": [
+      "build"
+    ],
     "noprompt": true
   },
   "ava": {
@@ -36,6 +38,7 @@
     "babel": "inherit"
   },
   "dependencies": {
+    "djv": "2.0.0",
     "vue": "^2.5.16",
     "vue-router": "3.0.1",
     "vuex": "^3.0.1"
