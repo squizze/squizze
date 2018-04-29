@@ -16,8 +16,6 @@ class Squizze {
         } else {
             this.calculate();
         }
-
-
     }
 
     calculate () {

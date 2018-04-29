@@ -1,4 +1,4 @@
-export default {
+{
   "summary":{
     "D": {
         "longName": "Dominance",
@@ -33,7 +33,7 @@ export default {
     {"value": 2, "content": "Discordo"},
     {"value": 3, "content": "Concordo um pouco"},
     {"value": 4, "content": "Concordo"},
-    {"value": 5, "content": "Concordo plenamente"},
+    {"value": 5, "content": "Concordo plenamente"}
   ],
   "questions":[
       {
@@ -165,4 +165,4 @@ export default {
         "content": "Costumo aceitar os reveses da vida com paciência e serenidade."
       }
   ]
-};
+}
