@@ -1,4 +1,4 @@
-export default {
+{
     "summary":{
         "S": {
           "longName": "Squirtle",
@@ -19,7 +19,7 @@ export default {
       {"value": 2, "content": "Discordo"},
       {"value": 3, "content": "Concordo um pouco"},
       {"value": 4, "content": "Concordo"},
-      {"value": 5, "content": "Concordo plenamente"},
+      {"value": 5, "content": "Concordo plenamente"}
     ],
     "groups": {
       "S1": [2],
@@ -27,14 +27,14 @@ export default {
       "B1": [4],
       "B2": [3],
       "C1": [6],
-      "C2": [5],
+      "C2": [5]
     },
-    "questions": {
-        "1": {"content": "Nao gosto de pokemons de agua"},
-        "2": {"content": "Gosto de pokemons de agua"},
-        "3": {"content": "Nao gosto de pokemons de grama"},
-        "4": {"content": "Gosto de pokemons de grama"},
-        "5": {"content": "Nao gosto de pokemons de fogo"},
-        "6": {"content": "Gosto de pokemons de fogo"},
-    }
-};
+    "questions": [
+        {"id": "1", "content": "Nao gosto de pokemons de agua"},
+        {"id": "2", "content": "Gosto de pokemons de agua"},
+        {"id": "3", "content": "Nao gosto de pokemons de grama"},
+        {"id": "4", "content": "Gosto de pokemons de grama"},
+        {"id": "5", "content": "Nao gosto de pokemons de fogo"},
+        {"id": "6", "content": "Gosto de pokemons de fogo"}
+    ]
+}

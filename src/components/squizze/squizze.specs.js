@@ -1,9 +1,9 @@
 import test from "ava";
 import Squizze from "./squizze";
-import DISCQuestions from "./samples/DISC.quiz";
-import DISCAnswers from "./samples/DISC.answers";
-import PokemonQuestions from "./samples/pokemon.quiz";
-import PokemonSquirtle from "./samples/pokemon.squirtle";
+import DISCQuestions from "../../quizzes/DISC/DISC.quiz";
+import DISCAnswers from "../../quizzes/DISC/DISC.answers";
+import PokemonQuestions from "../../quizzes/initial-pokemon/pokemon.quiz";
+import PokemonSquirtle from "../../quizzes/initial-pokemon/pokemon.squirtle";
 
 test("Squizze is defined", t => {
     t.truthy(Squizze);
