@@ -4,6 +4,7 @@ import QuizSchema from "./quiz.schema";
 class Squizze {
 
     constructor(quiz, answers) {
+
         this.quiz = quiz;
         this.answers = answers;
 
@@ -12,7 +13,7 @@ class Squizze {
         let validation_result = schema_validator.validate("quiz", quiz);
 
         if(typeof validation_result !== "undefined") {
-            throw ` Invalid Quiz. ${validation_result}`;
+            throw new TypeError(`Invalid Quiz. ${validation_result}`);
         } else {
             this.calculate();
         }

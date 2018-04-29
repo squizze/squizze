@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    import Squizze from "./components/squizze/squizze";
     import DISCQuiz from "./quizzes/DISC/DISC.quiz";
 
     export default {

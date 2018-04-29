@@ -1,9 +1,27 @@
 import test from "ava";
 import Squizze from "./squizze";
-import DISCQuestions from "../../quizzes/DISC/DISC.quiz";
-import DISCAnswers from "../../quizzes/DISC/DISC.answers";
-import PokemonQuestions from "../../quizzes/initial-pokemon/pokemon.quiz";
-import PokemonSquirtle from "../../quizzes/initial-pokemon/pokemon.squirtle";
+import DISCQuestions from "../quizzes/DISC/DISC.quiz";
+import DISCAnswers from "../quizzes/DISC/DISC.answers";
+import PokemonQuestions from "../quizzes/initial-pokemon/pokemon.quiz";
+import PokemonSquirtle from "../quizzes/initial-pokemon/pokemon.squirtle";
+import GroupItemHasNotIntegerItemsQuiz from "../quizzes/invalid-quizzes/groups-item-has-not-integer-items";
+import GroupsHasZeroItemsQuiz from "../quizzes/invalid-quizzes/groups-has-zero-items";
+import QuestionsItemHasNoId from "../quizzes/invalid-quizzes/questions-item-has-no-id";
+
+let invalidQuizzes =[{
+            quizz: GroupItemHasNotIntegerItemsQuiz,
+            message: `Invalid Quiz. type: data`,
+            answers: DISCAnswers
+        },{
+            quizz: GroupsHasZeroItemsQuiz,
+            message: "Invalid Quiz. type: data",
+            answers: DISCAnswers
+        }, {
+            quizz: QuestionsItemHasNoId,
+            message: "Invalid Quiz. type: data",
+            answers: DISCAnswers
+        }
+];
 
 test("Squizze is defined", t => {
     t.truthy(Squizze);
@@ -152,4 +170,14 @@ test("DISC calculates correctly when only one group is chosen", t => {
     let DISCC2 = new Squizze(DISCQuestions, answersC2);
     t.is(DISCC2.results.C.sum, 0 - Object.values(answersC2).reduce((total, current) =>  total + current ));
     t.is([DISCC2.results.D.sum, DISCC2.results.I.sum, DISCC2.results.S.sum].every(item => item === 0), true);
+});
+
+test("Test all invalid quizzes", t => {
+    invalidQuizzes.forEach(invalidQuiz => {
+        let error = t.throws(() => {
+            new Squizze(invalidQuiz.quiz, invalidQuiz.answers);
+        }, TypeError);
+
+        t.is(error.message,  invalidQuiz.message);
+    });
 });

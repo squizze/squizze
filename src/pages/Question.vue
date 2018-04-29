@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import Squizze from "../components/squizze/squizze";
+  import Squizze from "../squizze/squizze";
   import DISCQuiz from "../quizzes/DISC/DISC.quiz";
   import ProgressBar from "../components/progress-bar/ProgressBar.vue";
 
