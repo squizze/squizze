@@ -1,10 +1,10 @@
 import test from "ava";
 import Squizze from "./squizze";
-import DISCQuestions from "../quizzes/DISC/DISC.quiz";
-import DISCAnswers from "../quizzes/DISC/DISC.answers";
-import GroupItemHasNotIntegerItemsQuiz from "../quizzes/invalid-quizzes/groups-item-has-not-integer-items";
-import GroupsHasZeroItemsQuiz from "../quizzes/invalid-quizzes/groups-has-zero-items";
-import QuestionsItemHasNoId from "../quizzes/invalid-quizzes/questions-item-has-no-id";
+import DISCQuestions from "squizze-quizzes/api/disc.json";
+import DISCAnswers from "../samples/DISC.answers";
+import GroupItemHasNotIntegerItemsQuiz from "../samples/invalid-quizzes/groups-item-has-not-integer-items";
+import GroupsHasZeroItemsQuiz from "../samples/invalid-quizzes/groups-has-zero-items";
+import QuestionsItemHasNoId from "../samples/invalid-quizzes/questions-item-has-no-id";
 
 const StarterPokemonQuiz = {
   "summary":{
@@ -220,7 +220,7 @@ test("DISC calculates correctly when only one group is chosen", t => {
     t.is([DISCC2.results.D.sum, DISCC2.results.I.sum, DISCC2.results.S.sum].every(item => item === 0), true);
 });
 
-test("Test all invalid quizzes", t => {
+test("Test all invalid samples", t => {
     invalidQuizzes.forEach(invalidQuiz => {
         let error = t.throws(() => {
             new Squizze(invalidQuiz.quiz, invalidQuiz.answers);

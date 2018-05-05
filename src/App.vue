@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import DISCQuiz from "./quizzes/DISC/DISC.quiz";
+    import DISCQuiz from "squizze-quizzes/api/disc.json";
 
     export default {
       name: 'app',

@@ -43,7 +43,7 @@
 <script>
 
   import Squizze from "../squizze/squizze";
-  import DISCQuiz from "../quizzes/DISC/DISC.quiz";
+  import DISCQuiz from "squizze-quizzes/api/disc.json";
 
   export default {
     data () {
