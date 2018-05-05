@@ -2,13 +2,61 @@ import test from "ava";
 import Squizze from "./squizze";
 import DISCQuestions from "../quizzes/DISC/DISC.quiz";
 import DISCAnswers from "../quizzes/DISC/DISC.answers";
-import PokemonQuestions from "../quizzes/initial-pokemon/pokemon.quiz";
-import PokemonSquirtle from "../quizzes/initial-pokemon/pokemon.squirtle";
 import GroupItemHasNotIntegerItemsQuiz from "../quizzes/invalid-quizzes/groups-item-has-not-integer-items";
 import GroupsHasZeroItemsQuiz from "../quizzes/invalid-quizzes/groups-has-zero-items";
 import QuestionsItemHasNoId from "../quizzes/invalid-quizzes/questions-item-has-no-id";
 
-let invalidQuizzes =[{
+const StarterPokemonQuiz = {
+  "summary":{
+    "S": {
+      "longName": "Squirtle",
+      "rule": "S1 - S2"
+    },
+    "B": {
+      "longName": "Bulbasaur",
+      "rule": "B1 - B2"
+    },
+    "C": {
+      "longName": "Charmander",
+      "rule": "C1 - C2"
+    }
+  },
+  "choices": [
+    {"value": 0, "content": "Não sei"},
+    {"value": 1, "content": "Discordo plenamente"},
+    {"value": 2, "content": "Discordo"},
+    {"value": 3, "content": "Concordo um pouco"},
+    {"value": 4, "content": "Concordo"},
+    {"value": 5, "content": "Concordo plenamente"}
+  ],
+  "groups": {
+    "S1": [2],
+    "S2": [1],
+    "B1": [4],
+    "B2": [3],
+    "C1": [6],
+    "C2": [5]
+  },
+  "questions": [
+    {"id": "1", "content": "Nao gosto de pokemons de agua"},
+    {"id": "2", "content": "Gosto de pokemons de agua"},
+    {"id": "3", "content": "Nao gosto de pokemons de grama"},
+    {"id": "4", "content": "Gosto de pokemons de grama"},
+    {"id": "5", "content": "Nao gosto de pokemons de fogo"},
+    {"id": "6", "content": "Gosto de pokemons de fogo"}
+  ]
+};
+
+const StarterPokemonAnswersResultsIsSquirtle = {
+  "1": 0,
+  "2": 5,
+  "3": 2,
+  "4": 2,
+  "5": 1,
+  "6": 1
+};
+
+const invalidQuizzes =[{
             quizz: GroupItemHasNotIntegerItemsQuiz,
             message: `Invalid Quiz. type: data`,
             answers: DISCAnswers
@@ -106,7 +154,7 @@ test("DISC results are correct", t => {
 });
 
 test("Pokemon is Squirtle", t => {
-    let PokemonSquizze = new Squizze(PokemonQuestions, PokemonSquirtle);
+    let PokemonSquizze = new Squizze(StarterPokemonQuiz, StarterPokemonAnswersResultsIsSquirtle);
     t.truthy(PokemonSquizze);
     t.is(PokemonSquizze.results.S.sum, 5);
     t.is(PokemonSquizze.results.B.sum, 0);
