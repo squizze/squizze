@@ -61,6 +61,7 @@
     "html-webpack-plugin": "3.2.0",
     "node-sass": "4.5.3",
     "sass-loader": "6.0.6",
+    "squizze-quizzes": "^0.1.0",
     "vue-loader": "13.0.5",
     "vue-template-compiler": "2.5.16",
     "webpack": "3.6.0",
